@@ -1,0 +1,6 @@
+interface:
+  display_name: "Product turntable"
+  short_description: "Linked product studio turntables with saved film"
+  default_prompt: "Use $product-turntable to render a studio turntable of my saved product blend."
+policy:
+  allow_implicit_invocation: false

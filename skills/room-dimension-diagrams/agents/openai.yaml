@@ -1,0 +1,4 @@
+interface:
+  display_name: "Room Dimension Diagrams"
+  short_description: "Draw clear architectural dimension visuals"
+  default_prompt: "Use $room-dimension-diagrams to create an accurate dimensioned view of this room or built-in, including relevant finished walls and clearances."

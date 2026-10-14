@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Drawings to 3D"
+  short_description: "Turn plans and elevations into editable room models"
+  default_prompt: "Use $architecture-drawings-to-3d to reconstruct a room from its plans and elevations with durable evidence and a plain CAD preview."

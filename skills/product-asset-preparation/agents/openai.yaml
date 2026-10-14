@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product asset preparation"
+  short_description: "Isolated product blends preserving normals and UVs"
+  default_prompt: "Use $product-asset-preparation to prepare my frozen product geometry and material recipe as a validated standalone blend."

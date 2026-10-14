@@ -1,0 +1,4 @@
+interface:
+  display_name: "Existing Asset Fidelity Refinement"
+  short_description: "Turn image-guided craftsmanship into in-place CAD and shading"
+  default_prompt: "Use $existing-asset-refinement to improve this existing asset's construction and finish in place from its render."

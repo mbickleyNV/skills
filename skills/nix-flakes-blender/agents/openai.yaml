@@ -1,0 +1,3 @@
+interface:
+  display_name: "Nix Flakes Blender"
+  short_description: "Reproducible Nix environments for Blender Gym"

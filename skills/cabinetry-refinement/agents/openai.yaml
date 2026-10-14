@@ -1,0 +1,4 @@
+interface:
+  display_name: "Existing Cabinetry Refinement"
+  short_description: "Refine cabinet detail and finish while preserving dimensions"
+  default_prompt: "Use $cabinetry-refinement to improve existing cabinetry from an input render while preserving its dimension contract."
