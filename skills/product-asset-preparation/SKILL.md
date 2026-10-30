@@ -5,6 +5,19 @@ description: Prepare and validate a standalone product blend from frozen CAD mes
 
 # Offline product asset preparation
 
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
 For shared material masters, freeze the recipe helper revision as well as maps
 and packets before bulk preparation. Verify recipe equivalence from actual
 graphs, content hashes and physical mapping, not names. Preserve per-part grain
@@ -13,8 +26,9 @@ establish actual shared Material identity and unchanged source geometry/normals;
 reuse that result while the path remains unchanged. The current hardware example
 is recorded in `docs/specialists/knowledge/asset_preparer.md`.
 
-For authorized standalone product delivery, route the CAD/material → saved blend
-stage to `asset_preparer`. Use `docs/specialists/CONTRACT.md` for delegation or
+For authorized standalone product delivery, an available `asset_preparer` may own
+the CAD/material → saved blend stage when delegation is authorized. Otherwise the
+coordinator runs the isolated preparation process. Use `docs/specialists/CONTRACT.md` for delegation or
 its saved-instruction fallback. This role owns assigned product outputs and a
 separate offline process; it never owns the managed Blender/MCP/OVRTX session.
 It may work while that session renders. Live integration and native image review
@@ -26,6 +40,17 @@ flat/smooth intent, sharp edges, authored normals when supplied and metric UV
 intent. Prefer explicit per-corner UVs for complicated crown/endgrain/seam paths.
 Use planar/cylindrical recipes only for surfaces they represent faithfully.
 Label inferred material and UV decisions; missing evidence is not measured data.
+
+Metric density does not establish phase continuity. For explicit product UVs with
+visible wood seams, use the read-only `blender/tools/inspect_product_uv.py --packet
+<packet.json> --parts <hero-part-ids>` before rebuilding. It reports texture integer
+boundaries inside polygons and UV disagreement across same-surface coplanar shared
+edges. Compare those observations with actual map borders and the required grain
+path; seamless repeats and intentional chart boundaries are not automatic defects.
+Continuity checks default to polygons at least 1000 mm² to limit bevel-chart noise;
+use `--min-face-area-mm2 0` when those smaller facets are the affected scope.
+It does not inspect recipe UVs, weld split vertex IDs or certify native appearance.
+Fix the affected mapping/phase without changing dimensions or accepted normals.
 
 Run `blender/tools/prepare_product_asset.py` with an assigned packet/output. It
 starts the existing Blender binary with factory defaults, auto-execution disabled,
@@ -58,7 +83,7 @@ open another product's fixture as a starting template, install in the house, or
 publish. The turntable specialist consumes the accepted saved asset only when
 explicitly requested and the managed session is free.
 
-Adrian pilot lessons: compact unused per-part material slots while preserving each
+Offline preparation lessons: compact unused per-part material slots while preserving each
 face's semantic material ID; inspect actual native bindings before accepting mixed
 finishes. Keep welded source topology separate from scoped render index splits used
 to preserve supplied corner normals. If normals fail, localize part/loop/region and

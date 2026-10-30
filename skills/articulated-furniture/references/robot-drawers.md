@@ -1,9 +1,14 @@
 # Robot manipulation and learned feedback
 
+Project adapter note: paths and commands outside this skill directory describe
+optional integration examples. They are not bundled dependencies. Locate a
+maintained equivalent and verify its interface before execution; no historical
+helper, local service or schema is assumed to be installed.
+
 ## Reuse current owners
 
 Start at the checked-out pipeline's fast-path document. On the installed host it
-is `/home/mbickley/product-to-3d/spikes/blender-articulation-handoff/PIPELINE-FAST-PATH.md`.
+is `/absolute/product-pipeline/spikes/blender-articulation-handoff/PIPELINE-FAST-PATH.md`.
 Use `isaac-kitchenette/run_target.sh` for prismatic targets and `run_door.sh` /
 `door_run.py` for hinges. `robot_targets.py` derives current body-local targets
 and radian hinge coordinates from the saved-Blender USD; never cache joint indices.

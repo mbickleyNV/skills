@@ -5,6 +5,19 @@ description: Make CAD furniture articulate in Blender and live OVPhysX, export S
 
 # Articulated furniture
 
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
 LuaCAD emits named geometry and contact intent; Articraft bootstraps body
 membership, joint frames, limits and mechanism checks. Import into Blender,
 then let the saved `.blend` own geometry, physics and grasp metadata. Exports
@@ -46,8 +59,8 @@ not a mandatory extra run for every cosmetic edit.
   actual Blender operations use `blender-mcp-workflow`.
 - For Isaac manipulation or learned feedback, read [robot recipe](references/robot-drawers.md).
 - For parallel product workers, share the [compact handoff](references/batch-handoff.md) first.
-- Existing local code/evidence lives under
-  `/home/mbickley/product-to-3d/spikes/`: `simready-kitchenette`,
+- Historical adapter examples used a separately installed product pipeline
+  (placeholder `/absolute/product-pipeline/spikes/`): `simready-kitchenette`,
   `isaac-kitchenette`, and `blender-articulation-handoff`.
   Read the relevant current entrypoint/report, not every historical spike log.
   Use `simready-kitchenette/examples/README.md` for the implemented CAD-intent
@@ -73,7 +86,7 @@ not a mandatory extra run for every cosmetic edit.
   constraints or pose writes. Unlatched doors are not necessarily self-closing;
   springs, stops, mass and friction assumptions must be explicit.
 - Live means fresh solver motion. Never present baked playback, reversed video
-  or stitched resets as live proof. Use OVRTX for Blender rendering, never EEVEE.
+  or stitched resets as live proof. Honor the requested renderer; in an OVRTX project do not silently substitute EEVEE.
   Isaac Sim RTX is a separate integration; label it accurately. Use the existing
   installed add-on's supported session-update adapter and verify a visibly moved
   body's pose agrees with the measured solver pose before recording. Derive

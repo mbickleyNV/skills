@@ -1,49 +1,74 @@
-# Personal Blender and LuaCAD workflows
+# Personal LuaCAD and product workflows
 
-This personal fork includes 24 Blender/LuaCAD workflow skills used for product
-reconstruction, architectural modeling, materials, camera composition, native
-OVRTX rendering and scene-update engineering. These are personal workflow
-snapshots, separate from the inherited NVIDIA verified/signed catalog. No NVIDIA
-signature, certification or benchmark claim is made for these additions.
+The current generalized LuaCAD/product set is published on this fork's `main`
+branch under `skills/`. These personal workflows are separate from the inherited
+NVIDIA verified/signed catalog; no NVIDIA signature or certification is claimed.
 
-## Sources and snapshot rules
+## Current generalized set
 
-Shared workflows come from the local `agent-skills/skills` catalog. Remodel
-workflows come from the current `63rd-remodel/skills` tree; their room-rendering
-and scene-update entrypoints take precedence over the generic shared versions.
-The architectural reconstruction entrypoint includes the installed continuous-wall
-guidance missing from its older catalog copy. Its other references and helpers
-remain from the canonical catalog.
+| Skill | Purpose |
+|---|---|
+| [luacad-product-reconstruction](../skills/luacad-product-reconstruction/SKILL.md) | Reference evidence → dimensioned named CAD assemblies |
+| [luacad-fidelity-modeling](../skills/luacad-fidelity-modeling/SKILL.md) | Detailed product modeling and source/normal/UV acceptance |
+| [luacad-manufactured-details](../skills/luacad-manufactured-details/SKILL.md) | Manufactured edges, pulls, hardware and profiles |
+| [luacad-continuous-geometry](../skills/luacad-continuous-geometry/SKILL.md) | Continuous solids, shells, apertures and topology |
+| [luacad-2d-to-3d-complexity](../skills/luacad-2d-to-3d-complexity/SKILL.md) | BOSL profiles, offsets, sweeps, skins and placement |
+| [product-evidence-extractor](../skills/product-evidence-extractor/SKILL.md) | Variant-specific cited facts from manuals and drawings |
+| [product-asset-preparation](../skills/product-asset-preparation/SKILL.md) | Isolated saved product assets and normal/UV/material receipts |
+| [product-turntable](../skills/product-turntable/SKILL.md) | Explicitly requested studio product turntables |
+| [blender-product-assembly](../skills/blender-product-assembly/SKILL.md) | Product shading, photography and assembly animation |
+| [appliance-installation](../skills/appliance-installation/SKILL.md) | Installed appliance envelopes and coordinated cabinet fit |
+| [articulated-furniture](../skills/articulated-furniture/SKILL.md) | Furniture mechanisms, simulation and manipulation handoffs |
+| [digital-twin-iteration](../skills/digital-twin-iteration/SKILL.md) | Routing mixed reference, CAD, material and preview requests |
+| [material-reference-lookdev](../skills/material-reference-lookdev/SKILL.md) | Reference-based finishes and physically scaled PBR maps |
+| [image-feedback-to-cad](../skills/image-feedback-to-cad/SKILL.md) | Accepted visual concepts → source-backed integration |
+| [cabinetry-refinement](../skills/cabinetry-refinement/SKILL.md) | Existing cabinetry detail under dimensional constraints |
+| [existing-asset-refinement](../skills/existing-asset-refinement/SKILL.md) | In-place construction and finish refinement of existing assets |
 
-Complete skill references, agent metadata and five Python helpers are included.
-Backups, Python bytecode/cache directories and empty directories are excluded.
-The scene-update skill includes the current routing document and knowledgebase
-inside its own `references/` directory, with its two links adjusted accordingly.
+Start with `digital-twin-iteration` for mixed requests or
+`luacad-fidelity-modeling` for modeling. Use focused skills for focused work.
+The nine other personal Blender/architectural workflows from the earlier
+publication remain available; they are outside this generalized product refresh.
 
-## Use and dependencies
+## Portability and dependencies
 
-Read each `skills/<name>/SKILL.md` when its task applies, or install the specific
-skill directory into your agent's skills location. Start with
-`digital-twin-iteration` for mixed requests and `luacad-fidelity-modeling` for
-modeling; focused rendering and appearance work use their focused skills.
+These 16 directories were refreshed from the current canonical shared catalog
+and current project workflow sources, with all their references and bundled
+helpers. Generalization removes personal home-directory paths and makes project
+adapters explicit rather than assuming a particular remodel, Blender file,
+specialist roster, studio or service is installed. The
+[source inventory](personal-product-skills-sources.json) records original and
+published SHA256 values for every file, distinguishing source updates from edits
+made for portability.
 
-Project workflows expect the project's current HANDOFF, AGENTS, room XML,
-contracts, tools and specialist profiles. Those dependencies and local machine
-paths remain explicit; this snapshot does not bundle the remodel project,
-Blender scene, service configuration, credentials or renderer binaries.
-An installed MCP/runtime and the active project backend contract are required
-for live work. Installing these instructions alone does not install the tooling.
+Each directory is a skill, not a tooling installer. Install related skills side
+by side, or let the agent discover installed siblings by name. References written
+as `skills/<name>/...` describe sibling skills in this repository. Supporting
+camera, room-rendering and scene-update skills remain in the earlier personal
+set. Tile-layout planning is an optional separately installed workflow, not part
+of this product bundle.
 
-## Validation and recovery
+Only scripts physically inside a skill directory are bundled. Product asset
+preparation, turntable capture, articulation/robot adapters, project-specific
+imports, canonical scenes, studio templates and renderer binaries are external
+integrations. References retain example paths and interface contracts to make
+those boundaries inspectable; map them to the active project's maintained
+implementation before execution. `/absolute/...` denotes a placeholder, never an
+installed path. Missing tooling does not justify inventing support or silently
+claiming that a source model is render-ready. A source-only result remains valid
+when that is the requested scope.
 
-The publication was checked with the existing skill fleet catalog validator,
-its 18 unit checks, Python parsing of all five helpers, a credential-pattern scan,
-and the pinned Nix flake packaging check on an isolated catalog containing only
-these 24 skills. These checks establish skill packaging, not fresh Blender,
-LuaCAD or native renderer behavior. No scene or runtime was changed.
+Use the active project's renderer and save/publication rules. Named specialist
+roles describe responsibilities, not an instruction to start agents without
+authorization. A sole coordinator can perform those responsibilities; live
+Blender always has one owner. Turntables and external publication are separate
+requested actions, not automatic consequences of modeling.
 
-This is a source publication only. Existing Codex/Hermes installations and the
-canonical local catalog are unchanged. Future publication should compare with
-the current personal repository head and use a normal fast-forward push.
-Rollback is a normal revert of the publication commit; do not reset unrelated
-inherited catalog history or force-push.
+## Validation and publication
+
+See the [publication engineering note](engineering-changes/generalized-product-skills.md)
+for scope, checks, limitations and rollback. Packaging checks do not establish
+fresh LuaCAD, Blender, renderer, simulation or robot behavior. This publication
+does not change installed skills, the canonical local catalog or any live scene.
+Future updates use a normal fast-forward push; rollback uses a normal revert,
+with no force-push or rewriting inherited catalog history.

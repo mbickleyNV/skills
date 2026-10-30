@@ -5,7 +5,20 @@ description: Build or refine high-fidelity LuaCAD product and fixture models wit
 
 # LuaCAD fidelity modeling
 
-Read current HANDOFF and AGENTS. Default to close-view product fidelity unless the
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
+Read the current project handoff and agent instructions, when supplied. Default to close-view product fidelity unless the
 user asks for a simplified model. Keep dimensioned geometry in XML/LuaCAD, stable
 part IDs and current authoring source. No quiet quality downgrade because a curve,
 Boolean or detail is difficult. A blocked detail remains an explicit unresolved item.
@@ -17,13 +30,12 @@ Consult all four skills for a modeling assignment; load their deeper references
 only for the construction being attempted:
 
 - `luacad-product-reconstruction`: exact variant/evidence, named assembly, dimensions,
-  drawing overlays and export. Discover installed entrypoint; canonical shared source
-  is `/home/mbickley/agent-skills/skills/luacad-product-reconstruction/SKILL.md`.
-- `skills/luacad-manufactured-details/SKILL.md`: edges, lips, pulls, formed hardware
+  drawing overlays and export. Use the sibling `../luacad-product-reconstruction/SKILL.md` entrypoint.
+- `../luacad-manufactured-details/SKILL.md`: edges, lips, pulls, formed hardware
   and panel highlights. Generic radii are inferred fallbacks, not product facts.
-- `skills/luacad-continuous-geometry/SKILL.md`: real continuity, shells/apertures,
+- `../luacad-continuous-geometry/SKILL.md`: real continuity, shells/apertures,
   mating datums, retired IDs and welded topology distinct from render normals.
-- `skills/luacad-2d-to-3d-complexity/SKILL.md`: profiles, offsets, sweeps, skins,
+- `../luacad-2d-to-3d-complexity/SKILL.md`: profiles, offsets, sweeps, skins,
   rounded forms, attachments and efficient repetition; verified installed syntax.
 
 Architectural changes also use room XML/ROOM-CONTRACT and drawing evidence;
@@ -68,7 +80,7 @@ render-normal and UV intent with material regions, physical scale, grain directi
 seams and delicate surfaces. Native named 3MF does not establish preserved loop UVs
 or custom normals. For an authorized standalone product, hand frozen geometry,
 surface/normal/metric-UV intent and material recipe to `asset_preparer` using
-`skills/product-asset-preparation/SKILL.md`; isolated preparation can run while
+`../product-asset-preparation/SKILL.md`; isolated preparation can run while
 OVRTX is busy. Guarded live house imports remain coordinator-owned. The
 coordinator owns evaluated/native visual acceptance. Source-only delivery labels that stage
 pending; do not claim the model render-ready from topology checks alone.

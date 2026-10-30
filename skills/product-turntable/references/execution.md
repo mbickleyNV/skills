@@ -1,5 +1,10 @@
 # Execution contract
 
+Project adapter note: paths and commands outside this skill directory describe
+optional integration examples. They are not bundled dependencies. Locate a
+maintained equivalent and verify its interface before execution; no historical
+helper, local service or schema is assumed to be installed.
+
 The coordinator verifies other chats have relinquished live Blender, then passes
 `--blender-ownership-confirmed`. This flag records that check; it does not perform
 it. The shared `scratch/lighting-presets/active-batch.lock`, active-service check
@@ -17,7 +22,7 @@ mask output. The sequence retains native receipts and images in scratch.
 Use the managed Blender-Gym Python environment:
 
 ```sh
-/home/mbickley/spark-stack/blender-gym/.venv/bin/python \
+/absolute/managed-environment/bin/python \
   blender/tools/render_product_turntable.py \
   --asset /absolute/product.blend --collection ProductCollection \
   --product product-slug --blender-ownership-confirmed \

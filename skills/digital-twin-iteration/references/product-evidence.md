@@ -21,3 +21,12 @@ are not automatically a Blender energy value. Label guessed bulb output, approxi
 beam shape and empirical renderer calibration. Mount emitters at the actual optic;
 verify contribution with a light-on/off comparison, holding exposure fixed for a
 quantitative comparison. Do not claim photometric accuracy from matching color.
+
+
+For bounded extraction from supplied manuals/drawings, use the shared
+`product-evidence-extractor` skill. Its source packet pins source hashes and pages;
+its claims require variant applicability and page-level quotes. The validator
+checks provenance, not interpretation. Reuse `product_detail` for broader research
+and coordinator review; do not create another competing design specialist. An
+explicitly authorized cheaper-model extraction trial may use this packet, but no
+Luna quality/speed qualification has yet been established.

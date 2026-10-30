@@ -5,6 +5,19 @@ description: Improve existing modeled furniture or fixtures in place using a ren
 
 # Image-guided existing asset refinement
 
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
 Read HANDOFF, AGENTS, specialist CONTRACT and existing source/pipeline contracts.
 Use existing_asset_refiner for source/appearance coordination; root retains exclusive
 live integration, native review and permitted saves. Use cabinetry-refinement for

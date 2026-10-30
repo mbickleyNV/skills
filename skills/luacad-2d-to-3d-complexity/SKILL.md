@@ -5,6 +5,19 @@ description: Turn controlled 2D outlines, regions, and paths into complex native
 
 # LuaCAD 2D-to-3D complexity
 
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
 Drive complexity from the smallest stable representation: a closed region for planar coverage, one profile plus a path for constant-section bends, or corresponding profiles for changing sections. Prefer native `bosl.*` geometry because LuaCAD 1.1 previews and meshes it without OpenSCAD.
 
 ## Choose the construction deliberately

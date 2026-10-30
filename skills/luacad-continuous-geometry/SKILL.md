@@ -5,6 +5,19 @@ description: Audit and repair LuaCAD geometry that should read as continuous, us
 
 # LuaCAD continuous geometry
 
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
 Reduce false fragmentation, not semantics. One manufactured solid or uninterrupted
 finish should normally export as one connected mesh. Keep material changes,
 construction joints, operable bodies, removable hardware, glazing, and intentional

@@ -5,6 +5,19 @@ description: Create or refine reference-based product finishes, including image-
 
 # Material reference look development
 
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
 Read current `HANDOFF.md` and follow `AGENTS.md` for live ownership and saves.
 Identify the frontmost visible object and evaluated assignment before changing a
 material. Classify geometry/contact, UV scale/direction, texture channels, translator
@@ -16,6 +29,11 @@ for a bad mating surface or bowed planar normals by changing roughness.
 - Identify exact finish variant and source provenance. Sample swatch interiors away
   from glare/shadow; product photography includes lighting and is not pure albedo.
   Generated flat references can approximate hidden patterns, not verify them.
+- For named color alternatives, inspect actual manufacturer swatches together
+  before ranking similarity. Compare lightness, hue and saturation separately
+  from glaze character; a similar gloss or variation range cannot make dark brown
+  a match for pale green-white. Keep the comparison light/white point fixed and
+  label room renders as appearance studies when photography is uncalibrated.
 - Require the physical pattern scale receipt and generated-feature review in
   `references/image-generated-openpbr.md` for image-generated product maps.
 - Record texture extent in physical units and orient grain per part. Keep albedo,
@@ -26,6 +44,23 @@ for a bad mating surface or bowed planar normals by changing roughness.
   reference and viewing scale. Powder coat is a coated dielectric surface; visible
   substrate or wear needs supporting evidence. Do not add generalized dirt/aging
   to every asset to make it realistic.
+- When sample and installation photos disagree, compare them side by side before
+  choosing the color center. A brighter installation board is not inherently a
+  better albedo reference than darker product samples. Preserve the discrepancy
+  and give the user's latest image and color correction priority over an earlier
+  photographic interpretation or specialist acceptance.
+- Judge lightness, chroma and hue separately in the actual fixed-lighting render.
+  Source RGB agreement alone can still produce an overly bright/saturated finish
+  after room illumination and the saved film grade. For a reported saturation or
+  brightness mismatch, adjust only the affected material/instance color, then
+  inspect one representative native preview before repeating a gallery batch.
+  Keep the palette's stable IDs and relative variation; do not shift room lighting
+  to repair one finish.
+- Treat a noted photographic cast as uncertainty, not permission to erase the
+  reference's dark or muted character. Use unclipped, plausibly neutral surfaces
+  only as a cautious cast check; colored bounce and mixed lighting are not global
+  white-balance evidence. Avoid sampling grout, glare and deep shadows as tile
+  albedo. A small blue cast does not by itself justify brighter/oranger tile.
 - Physical lips, gaps, perforations and visible textile thickness belong to geometry
   when they affect silhouette/contact/shadows. Shader normals cannot replace them.
   Label unsourced small radii, roughness values and fabric construction as estimates.
@@ -58,9 +93,11 @@ Load existing specialized detail only when needed:
 
 - Ceramic/grout/GN UV and mottling: `skills/tile-finish-lookdev/SKILL.md`.
 - Wood maps, grain and stale UV diagnosis:
-  `skills/image-feedback-to-cad/references/texture-workflow.md`.
+  `../image-feedback-to-cad/references/texture-workflow.md`. Read its wood-edge
+  section for cabinet lipping, edge banding or smeared bevels; verify evaluated
+  edge charts separately from accepted broad faces before changing the finish.
 - Pure grade/bloom/grain changes:
-  `skills/digital-twin-iteration/references/retained-image-iteration.md`.
+  `../digital-twin-iteration/references/retained-image-iteration.md`.
 - Native captures: `skills/ovrtx-room-rendering/SKILL.md`; failure recovery only
   after a concrete failure. Source/export performance investigations use
   `skills/blender-scene-updates/SKILL.md`.

@@ -93,7 +93,7 @@ Source: 2026-09-24 upstairs channel-audit entries in
 
 ## Oak grading, Marmoleum and coated furniture
 
-`skills/image-feedback-to-cad/references/texture-workflow.md` records an oak float-save
+`../../image-feedback-to-cad/references/texture-workflow.md` records an oak float-save
 round-trip that brightened color and reduced contrast. Grade from untouched input,
 keep an explicit color-space path and use absolute transforms so recalls/imports do
 not compound tint. The matcha Marmoleum history records generated reference maps and

@@ -5,6 +5,19 @@ description: Iterate accepted image details into this remodel's CAD and Blender 
 
 # Image feedback to CAD
 
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
 When the requested design is a recallable alternative, use
 `skills/room-variations/SKILL.md` for ownership, draft/commit/save and rendering.
 Separate shared component placement from variation appearance before editing.
@@ -30,7 +43,7 @@ source and separate geometry, shading and UV defects before editing.
   guarded preparer. Include affected mating/dependent parts. This shrinks the MCP
   payload, not just the eventual import. Omit the filter for initial setup or when
   dependency scope is unclear; do not reread/send all meshes for a two-part edit.
-- Treat `house.blend` as persistent authored state: native room/assembly collections,
+- Treat the canonical project `.blend` as persistent authored state: native room/assembly collections,
   shared Material/node-group datablocks, saved cameras and lighting. Replace Mesh
   data under stable Objects; do not reconstruct the scene or append duplicate assets.
   Read the native reuse section in `blender/PIPELINE-CONTRACT.md` only when changing
@@ -84,5 +97,5 @@ public SDK/OVStream add-on; follow the active backend contract in `AGENTS.md`.
   [texture workflow](references/texture-workflow.md).
 - Finish-only generated concepts: [concept boundaries](references/finish-concepts.md).
 - Mixed product/model/material requests and specialist briefs:
-  `skills/digital-twin-iteration/SKILL.md`.
-- General finish matching: `skills/material-reference-lookdev/SKILL.md`.
+  `../digital-twin-iteration/SKILL.md`.
+- General finish matching: `../material-reference-lookdev/SKILL.md`.

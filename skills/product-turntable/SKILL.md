@@ -5,21 +5,34 @@ description: Render an explicitly requested studio product turntable from a save
 
 # Product turntable
 
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
 Run only when the user asks for a turntable. Finishing a model or material does
-not invoke this workflow. Delegate to `turntable_specialist` when available;
-otherwise pass its saved instructions using `docs/specialists/CONTRACT.md`.
+not invoke this workflow. When delegation is authorized, use an available turntable specialist with
+explicit live-session ownership; otherwise the sole operator performs the workflow.
 
 Read current HANDOFF, the specialist contract and
 [the execution contract](references/execution.md). Use the Blender product
-assembly and Blender MCP workflow skills for live work. The canonical studio is
-`blender/studios/product-turntable.blend`: reuse it, never regenerate or overwrite
-it for a product. It contains a global camera, scaled softbox rig, matte ground
-and a local copy of the accepted KC25 film/compositing graph with packed LUT.
+assembly and Blender MCP workflow skills for live work. Select the project's accepted studio template (for example
+`blender/studios/product-turntable.blend`); reuse it rather than overwriting it
+for a product. If absent, studio creation is a separate setup task. It contains a global camera, scaled softbox rig, matte ground
+and a local copy of the accepted project film/compositing graph with packed LUT.
 
 Dispatch includes the saved product `.blend`, explicit asset-only collection,
 source SHA256, product slug and requested duration/quality. Preserve linked
 geometry, UVs, normals and materials. If that accepted asset is missing, route
-preparation to `asset_preparer` through `skills/product-asset-preparation/SKILL.md`
+preparation to `asset_preparer` through `../product-asset-preparation/SKILL.md`
 first; it can work offline while rendering is busy. Do not improvise an import
 inside the live turntable session. Consume its matching asset-ready receipt.
 The collection must be static and
@@ -52,8 +65,8 @@ Turntable movies use 50 frames by default. Retain the saved film/color stack, bu
 
 Before the final orbit, compare accepted native camera matrices with requested poses
 and inspect distinct quarter views; planned matrices alone do not prove camera motion.
-The Adrian pilot required a temporary capture-order repair that was restored afterward;
-see current HANDOFF and its engineering note. Do not assume that fix is installed.
+A previous integration required a temporary capture-order repair. Treat that as
+historical evidence, not an installed fix; inspect the current adapter if motion fails.
 Resolve a reproduced mismatch through the supported capture boundary before final
 rendering. Carry detail/finish acceptance separately from movie completion: an orbit
 cannot close pending endgrain, edge registration, cavity profile or shader-support gaps.

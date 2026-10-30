@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "scope": "Generalized personal LuaCAD and product workflows",
+  "source_selection": "Canonical shared catalog; current project-specific workflows where present. Installed projections are not sources.",
+  "skills": {
+    "luacad-product-reconstruction": {
+      "source_kind": "shared-catalog",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "e355c44e1f46440a60181217248fc900f56af4f38077ec610c8d685e3c94ccb7",
+          "published_sha256": "645fcd7a5c4da664944ea2e90045dc7b99e98821e49b1771b2b2c3ffb04885f6"
+        },
+        "references/detailed-construction.md": {
+          "source_sha256": "7bc68a4e06828d723ac33ab4b1b789199761ff7f8b0b9a991ff1f15508125aa6",
+          "published_sha256": "7bc68a4e06828d723ac33ab4b1b789199761ff7f8b0b9a991ff1f15508125aa6"
+        },
+        "references/drawing-overlay.md": {
+          "source_sha256": "54722e2ad53cb55f2fd9d196f3d424fb3269a1083782729e537a76973a0f8024",
+          "published_sha256": "54722e2ad53cb55f2fd9d196f3d424fb3269a1083782729e537a76973a0f8024"
+        },
+        "references/large-assemblies.md": {
+          "source_sha256": "a1df61ba8350274bd37cb3b103a2cc972d9f4a127e9c2fd35bd4b2e99c55aca2",
+          "published_sha256": "a1df61ba8350274bd37cb3b103a2cc972d9f4a127e9c2fd35bd4b2e99c55aca2"
+        },
+        "scripts/overlay_drawing.py": {
+          "source_sha256": "21551781a299249898fb6ca508bf8ac1f01caa360c3ec9148e01380dbe3da272",
+          "published_sha256": "21551781a299249898fb6ca508bf8ac1f01caa360c3ec9148e01380dbe3da272"
+        }
+      }
+    },
+    "luacad-fidelity-modeling": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "1318dc5052f851d1c6809db988a049104c5dda54740b2bcd17103eb7614ceffe",
+          "published_sha256": "7b1630538696200445635b87c1c1a9d833347a2d8e85ab9f8fb2e40ff431b2a4"
+        },
+        "references/detail-surface-acceptance.md": {
+          "source_sha256": "351ac0d5ddddd0366f8308c9065b8e80ff1bab7930c85a6d370457fd1486fecd",
+          "published_sha256": "033d2d65ebea02e941fda95d510748a36406f8da9462764813e7b2d96de136c4"
+        }
+      }
+    },
+    "luacad-manufactured-details": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "58f5b14c046a3f84fe07fd8ede51e1ad728fe91fc16ea046c347396c97c35310",
+          "published_sha256": "5b53a608b841159d36150ffea6e38ef507058519f428fad62f07f20cf6b0a889"
+        },
+        "agents/openai.yaml": {
+          "source_sha256": "ff07b170de2732cb2f5eeebaaf6b6616f1ee1ea935694f7ec9d5958e9cfa87d6",
+          "published_sha256": "ff07b170de2732cb2f5eeebaaf6b6616f1ee1ea935694f7ec9d5958e9cfa87d6"
+        }
+      }
+    },
+    "luacad-continuous-geometry": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "8154830360a9e107044895f3174317f0229553858c29f96a8c08cc27a32f759e",
+          "published_sha256": "ff6ecb67607930561d86cc23a15250600789e62028847fc0524ad1433a88359d"
+        },
+        "references/capability-selection.md": {
+          "source_sha256": "f126d5e61947bdd5d4921ddf38c7527710970304863c08836841703dd4006d1a",
+          "published_sha256": "f126d5e61947bdd5d4921ddf38c7527710970304863c08836841703dd4006d1a"
+        }
+      }
+    },
+    "luacad-2d-to-3d-complexity": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "359c24546e2d3a7add3e616ef3b88b9e5437da0ad9213ecb0723636f0dfde3c3",
+          "published_sha256": "b2854ccb33b3b51208fc6acc94fc97025bd1f985869a20bcd28c5092b46f3c78"
+        },
+        "agents/openai.yaml": {
+          "source_sha256": "494175b38259cd751297c488ec0d3b5ba0a8254ba6bdae073dcaadb27f298a7e",
+          "published_sha256": "494175b38259cd751297c488ec0d3b5ba0a8254ba6bdae073dcaadb27f298a7e"
+        },
+        "references/verified-syntax.md": {
+          "source_sha256": "e040c9dc2610e4579cd2aed76116afae808a8510bf5f32bb827685ceebdc6213",
+          "published_sha256": "e040c9dc2610e4579cd2aed76116afae808a8510bf5f32bb827685ceebdc6213"
+        }
+      }
+    },
+    "product-evidence-extractor": {
+      "source_kind": "shared-catalog",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "0de3d6493b99de8b90aea7da9a426c0bdac41f04c786eaccf95eb929e0536191",
+          "published_sha256": "7eb1123347496f4e2a1faa72cc77ce4d3976e710f720fa0f6990b222a0c82fb5"
+        },
+        "scripts/evidence_packet.py": {
+          "source_sha256": "9817522d9a57edd555a6169c2608640166e998b627395f5d72a76de1608479f3",
+          "published_sha256": "9817522d9a57edd555a6169c2608640166e998b627395f5d72a76de1608479f3"
+        }
+      }
+    },
+    "product-asset-preparation": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "97d8d562fcb1f98cea23f8c5cd0140e2668012e5a06701b2d9bbfbf9f36af675",
+          "published_sha256": "8c81600c2f438af06e0f39fc579351656b850c1922a35a8b97214366998141cc"
+        },
+        "agents/openai.yaml": {
+          "source_sha256": "21b4dfb8fd36e96fd8ab9487a1fd323305149374ec982206c2dde91843b39aa4",
+          "published_sha256": "21b4dfb8fd36e96fd8ab9487a1fd323305149374ec982206c2dde91843b39aa4"
+        },
+        "references/packet.md": {
+          "source_sha256": "c9fd876afd4b313054731b82114247bf89e803e38de738f0ecf8c358a2c3486c",
+          "published_sha256": "a0b8e5ad8c500371cb47859c1d996d0886edd8d42da927510caf87c8fe1e09da"
+        }
+      }
+    },
+    "product-turntable": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "e16521e0467667a025fb331121856c2bc0c4fdfeb829053ba72fe429935ab6cc",
+          "published_sha256": "a0aa40017f81a9408226755043201e42a9f5dc2dcfded10c825cf26a027934e8"
+        },
+        "agents/openai.yaml": {
+          "source_sha256": "c07f96386c74d00b1631b409a6c1f8fd3a82be1e6587fabf1686d38a2f594fec",
+          "published_sha256": "c07f96386c74d00b1631b409a6c1f8fd3a82be1e6587fabf1686d38a2f594fec"
+        },
+        "references/execution.md": {
+          "source_sha256": "892d110038cae9dae6f19553aecec7e788ef3120c7f195b7c483578cc4822e40",
+          "published_sha256": "6ecba56daf056143486dbac435e33aa7456c1719bb6b791fffa27ab9e41d4fd0"
+        }
+      }
+    },
+    "blender-product-assembly": {
+      "source_kind": "shared-catalog",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "fa8d7b725de4850f0fd47bafc2318d2f3923b15cb09e3dc74dbfa56ef5c1c3dc",
+          "published_sha256": "dd97d746e313fd6b19e98117a30e0efe73c62584137189e27beb04f5ef4d9af9"
+        },
+        "references/animation.md": {
+          "source_sha256": "d5a314740b09d616d60c8bf2b63a612ce4668419cc54d1a0b07dabd7dfbd4b1e",
+          "published_sha256": "d5a314740b09d616d60c8bf2b63a612ce4668419cc54d1a0b07dabd7dfbd4b1e"
+        },
+        "references/iterative-cad.md": {
+          "source_sha256": "24c4d845e3c3057bcff16743c40a610d2d8b93e6c0125c5a708a5af02caebc0b",
+          "published_sha256": "24c4d845e3c3057bcff16743c40a610d2d8b93e6c0125c5a708a5af02caebc0b"
+        },
+        "references/ovrtx-batch.md": {
+          "source_sha256": "f18eb922e9d7ae7739b70e14d72b0c69e843ca5b42fd4e10583b90894ba30da7",
+          "published_sha256": "f18eb922e9d7ae7739b70e14d72b0c69e843ca5b42fd4e10583b90894ba30da7"
+        },
+        "references/physics-handoff.md": {
+          "source_sha256": "15b0cf06418403c8787e36b3a75be4f19d2eeab8c3a4dcac698615ede5c56cf9",
+          "published_sha256": "15b0cf06418403c8787e36b3a75be4f19d2eeab8c3a4dcac698615ede5c56cf9"
+        }
+      }
+    },
+    "appliance-installation": {
+      "source_kind": "shared-catalog",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "e11dc1f5ddc5ab607a6ae241aa5c87ae4b728d4527959b524eed058a1412d933",
+          "published_sha256": "62b15ab035eadde8a31d620a7eb05743089dc5892fbc5b2b9772f4f6727da9f6"
+        }
+      }
+    },
+    "articulated-furniture": {
+      "source_kind": "shared-catalog",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "a72dab8c57043d7b5e74bbee3010564990d8fcddbffc71c5812dc65f49b5233e",
+          "published_sha256": "9945459b9688b619689bdf3db9c2212474aeb1fe3d38f1e2b4e2f6575317e374"
+        },
+        "references/batch-handoff.md": {
+          "source_sha256": "c51b375e8b0de93b7376a06a248b7c7943acf2653d43dda82afc5e5c1453ba28",
+          "published_sha256": "c51b375e8b0de93b7376a06a248b7c7943acf2653d43dda82afc5e5c1453ba28"
+        },
+        "references/blender-authoring.md": {
+          "source_sha256": "3f1bad477aea4a0d98bb8aeac16f5466505706779def2f3e057b92b7127d1dda",
+          "published_sha256": "a428a2fcaafa29690c64f9d51f4a899a39b1560c94b3ff53661a6eb8103b063f"
+        },
+        "references/robot-drawers.md": {
+          "source_sha256": "bd2f9bedc2b6e59e1f0959968d0e2d0c66fdc0b6af228ef47f69c5ce4cb7643f",
+          "published_sha256": "61a1d243c63bd999adb9fdc762a7847e61d095132c62f72ca227bf11d94a8b27"
+        }
+      }
+    },
+    "digital-twin-iteration": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "6099103406700356a77990f5f5e9a4e2509db9f949faabdbd42cb99d2216abf3",
+          "published_sha256": "9a77b081d31872a35d2951fa9b4865b573cdd6ff6db5dd430d7b2bc119a3df84"
+        },
+        "references/product-evidence.md": {
+          "source_sha256": "7f4a3ed3a73799b3509ded0a26db7845900ceb127ffa2bc5c1bcb9ed71fb688a",
+          "published_sha256": "7f4a3ed3a73799b3509ded0a26db7845900ceb127ffa2bc5c1bcb9ed71fb688a"
+        },
+        "references/retained-image-iteration.md": {
+          "source_sha256": "f59aabb3588a7eca2258f272c7eef25bdb9c1921df50a4d190d1df17c2efaec8",
+          "published_sha256": "f59aabb3588a7eca2258f272c7eef25bdb9c1921df50a4d190d1df17c2efaec8"
+        },
+        "references/scoped-fixture-installation.md": {
+          "source_sha256": "75aaafeb9dd46e2a7dee2d0893b1369564f606e0f1f4e2150329bbb976e84c8c",
+          "published_sha256": "53965e438ce266c4f06d769ff24003507fa42bdfad0f871c131c84b9a05d8410"
+        },
+        "references/scoped-helper-calls.md": {
+          "source_sha256": "a6dfc37c77005a504802886948ddfdaac143e30728d4fa3e3f7e541a2ba8eeb7",
+          "published_sha256": "fe0ac47b9601cbd415e9237cda8b2981d23ec7e56a6e416f52eec01a1be54fd1"
+        },
+        "references/specialist-packets.md": {
+          "source_sha256": "d11586a9898265bf4800a5e5d35835e04166c770802dfa1453c8aa22964990b5",
+          "published_sha256": "1923b097dfdbbadf2e403844c5593d405c64d898b752a44e31bad0e36e17c5c4"
+        }
+      }
+    },
+    "material-reference-lookdev": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "a7e3584e79cea77e4e0dcf1bf260001cf476d244bf9844621efadbb7a29bfca0",
+          "published_sha256": "8677694fd4922cbe3264b56b523138e819db02d1098fbef1fd3557b9b86818c1"
+        },
+        "references/image-generated-openpbr.md": {
+          "source_sha256": "5376327ea07cbd6af902ff78dd71df906301ed776ee56ef286ba50da80faaee3",
+          "published_sha256": "5376327ea07cbd6af902ff78dd71df906301ed776ee56ef286ba50da80faaee3"
+        },
+        "references/prior-material-lessons.md": {
+          "source_sha256": "9707f4d8314da25b10b526d582344748a99dcb267f1ca28a27759b37c4457197",
+          "published_sha256": "d374973ef2826b16d9026cac26f728ef4334e6f9e1e98ce76f578ef042ca8bd1"
+        }
+      }
+    },
+    "image-feedback-to-cad": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "a490137688be1c72e709c5c7675cae1565ba3d97dad4de817113b83433c5ff29",
+          "published_sha256": "7656b97652adf693c0192aca0be5a6ac8a9edbbde36dc5462ffbfd91f1a15a51"
+        },
+        "references/detailed-integration.md": {
+          "source_sha256": "2246705313547dd5001e356913134b908676f13803c7881d3fa5c1a9d5f3ae94",
+          "published_sha256": "2246705313547dd5001e356913134b908676f13803c7881d3fa5c1a9d5f3ae94"
+        },
+        "references/finish-concepts.md": {
+          "source_sha256": "55b00f6b2856bc479624dbf48926d05e63c49bda84bd78284bb3388628a02e18",
+          "published_sha256": "55b00f6b2856bc479624dbf48926d05e63c49bda84bd78284bb3388628a02e18"
+        },
+        "references/marked-repairs.md": {
+          "source_sha256": "6cedacf37593f9eabb98702d32cc9bd58faf205b38207bcc6f50dbd7102709a2",
+          "published_sha256": "6cedacf37593f9eabb98702d32cc9bd58faf205b38207bcc6f50dbd7102709a2"
+        },
+        "references/texture-workflow.md": {
+          "source_sha256": "1405311955e053a5dc9ed3dcfc45a8c3943eafd0e33468cd9fb4936b3ed14356",
+          "published_sha256": "465c21d9747e5fe82eb549c86d75e5cfd611684d5d421720ea6f6baf313bb34a"
+        }
+      }
+    },
+    "cabinetry-refinement": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "31a0f19e5a427d8c857d6eabe9fb63a0c55a2135cbf30dc498028659050b97fe",
+          "published_sha256": "1a0c641f1928e5418884494b1c104a41e79f580dd6e8968a1a6ee9b8ea799cb5"
+        },
+        "agents/openai.yaml": {
+          "source_sha256": "fedf342db39ac54ac0193366ec819087e473bb2a8988ded9e97b78c246e35cbe",
+          "published_sha256": "fedf342db39ac54ac0193366ec819087e473bb2a8988ded9e97b78c246e35cbe"
+        }
+      }
+    },
+    "existing-asset-refinement": {
+      "source_kind": "project",
+      "files": {
+        "SKILL.md": {
+          "source_sha256": "bfc469d9e84a6af77e54b41b12d30a0258db6518df676fe156b4af941b477c5d",
+          "published_sha256": "b8677fb71efe992d95082b91371c4ac14d46987a31ae335f8b4684e4a25838e4"
+        },
+        "agents/openai.yaml": {
+          "source_sha256": "9d94615ddc94bd32a14698c36e136db5cdc4c570119439cf8d5c8e200661c0b8",
+          "published_sha256": "9d94615ddc94bd32a14698c36e136db5cdc4c570119439cf8d5c8e200661c0b8"
+        }
+      }
+    }
+  }
+}

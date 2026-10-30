@@ -61,6 +61,13 @@ texel density and unintended mirrored grain. Retain one coordinate/phase across 
 roughness, normal and coat maps. In an offline export that lacks UVs, provide this
 explicit recipe and leave UV delivery pending; never invent tested support.
 
+For wood joinery, declare broad veneer, longitudinal lipping/edge banding and
+solid-stock endgrain regions separately. Supply edge grain axes and seams along
+with the face chart; a front projection must not collapse perpendicular caps.
+Verify the evaluated bevel bands retain physical UV scale after modifiers. See
+`../../image-feedback-to-cad/references/texture-workflow.md` for the bounded oak
+edge repair and post-import source-witness check; preserve accepted face grain.
+
 Coordinator can inspect a metric checker/directional stripe on affected imported
 surfaces when needed, then actual material highlights. Confirm active render UV layer,
 tangent convention, slots and native consumption. Material/normal checks remain

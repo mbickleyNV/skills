@@ -5,6 +5,19 @@ description: Build and refine pulls, handles, cranks, frames, moulding, cabinet 
 
 # LuaCAD Manufactured Details
 
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
 Use this skill after architectural dimensions and openings are established. Pair it with `luacad-continuous-geometry` for topology decisions and `luacad-2d-to-3d-complexity` for profile and sweep syntax.
 
 Honor the assigned stage and live owner. A CAD-only worker uses native LuaCAD
@@ -75,4 +88,4 @@ A higher triangle count is acceptable when it creates a real small radius or swe
 
 ## Project handoff
 
-Keep durable geometry in XML/LuaCAD and stable objects in `blender/house.blend`. Replace Mesh data on existing Blender objects, retain materials and transforms, and save only current named room renders. Record exceptions when a construction joint or moving interface must remain separate.
+Keep durable geometry in XML/LuaCAD and stable objects in the project's canonical `.blend`. Replace Mesh data on existing Blender objects, retain materials and transforms, and save only current named room renders. Record exceptions when a construction joint or moving interface must remain separate.

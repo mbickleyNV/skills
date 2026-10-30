@@ -1,8 +1,13 @@
 # Frozen product packet v1
 
+Project adapter note: paths and commands outside this skill directory describe
+optional integration examples. They are not bundled dependencies. Locate a
+maintained equivalent and verify its interface before execution; no historical
+helper, local service or schema is assumed to be installed.
+
 `prepare_product_asset.py --packet /absolute/packet.json --output
 /absolute/project/products/<slug>/product.blend` is the host command. Existing
-Blender: `/home/mbickley/blender/bin/blender`. Work requires user systemd resource
+Blender: `/absolute/installed/blender`. Work requires user systemd resource
 scopes and `/usr/bin/nice`. `--plan` prints the nonexecuting launch plan;
 `--replace` permits a reviewed replacement, preserving prior asset in scratch.
 Default timeout is 900 seconds. Interrupted/OOM/failed validation leaves the
@@ -35,6 +40,42 @@ Packet is declarative JSON, never a task Python script:
 ```
 
 Values above illustrate the schema; they are not a verified product recipe.
+Optional `mount_empties` is a list of `{id,matrix_local_m,properties}` records.
+Matrices use row-major column-vector convention, metre translations, and rigid
+right-handed rotation. `properties.owner` resolves to a mesh `id` or its optional
+`source_part`; pose, kind and source_id are retained as custom properties. These
+produce actual geometry-free Empty objects in the saved library. Empty transforms,
+metadata and geometry-free identity must persist through save/reopen.
+
+Optional `pose_collections` is a list of `{name,part_ids,empty_ids}` records. Each
+defines a child collection of the packet root; all objects must be assigned to at
+least one child, and unchanged objects may belong to multiple children. Link one
+pose child into the house, not the parent containing simultaneous endpoints.
+The worker verifies exact memberships and shared actual Material identity after
+save/reopen. Static endpoint collections do not establish a valid kinematic sweep.
+Without these fields the original single-collection mesh packet behavior applies.
+Optional `linked_hardware` records contain `library` and `receipt` frozen
+`{path,sha256}` sources, accepted `collection`, and `instances` records
+`{id,mount_empty}`. Each creates a unit-scale collection instance parented at an
+existing attachment Empty, with no basis offset; pose memberships inherit the
+attachment's memberships. The existing manufacturer blend, Meshes, material
+graphs and texture packing stay immutable and library-linked. The worker validates
+the library/receipt/source hashes, actual linked collection, attachment parenting
+and unit basis through save/reopen. Receipt bounds separately describe the linked
+hardware; the main dimensions remain those of the source furniture meshes.
+Absolute library paths intentionally survive private staging and promotion.
+This is a declared external project dependency, not a self-contained copied mesh;
+a later relative-path conversion must be guarded, saved/reopened and re-receipted.
+Optional `mode: "linked_mesh_objects"` creates local Mesh Objects that directly
+share the immutable linked manufacturer's Mesh and Material data, instead of
+the default `collection_instances`. This mode currently requires exactly one
+Mesh Object in the source collection. It retains the source object's rigid
+unit basis and collection offset at each attachment; no Mesh copying, geometry
+realization, normal repair or material replacement occurs. Staged and canonical
+readback compare exact source geometry, corner normals, UVs and material binding
+fingerprints and require actual shared linked Mesh identity across placements.
+This permits consumer paths that do not expose nested collection instances;
+native appearance still needs coordinator validation.
 Optional `asset_metadata` is a JSON object of declarative product identity and
 mounting information. The worker serializes it as sorted JSON in the owning
 collection's `product_asset_metadata` custom property, checks exact persistence
@@ -57,6 +98,9 @@ from millimeters to Blender meters without placement changes. Optional
 `corner_normals` are unit vectors in face/loop order; optional `sharp_edges` are
 vertex-index pairs. Optional `uv_coords` are per-loop pairs and take precedence
 over recipe UVs. Without them, every semantic surface requires a recipe.
+Optional `source_part` preserves the stable CAD identity when static pose Object
+IDs differ; `product_source_part` stores that source identity, while
+`product_endpoint_object_id` retains the unique exported Object ID.
 
 Cylindrical UV recipe: `mode:cylindrical`, `axis:X|Y|Z`, `center_m:[x,y,z]`,
 `radius_m`, `extent_m:[circumference-patch-length,axial-patch-length]`, optional

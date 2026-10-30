@@ -1,11 +1,24 @@
 ---
 name: digital-twin-iteration
-description: Route mixed remodel requests from product references or accepted concepts into dimensioned CAD, materials, and fast native previews. Use when coordinating those stages or specialist subagents; simple renders and single-channel edits use their focused skills directly.
+description: Route mixed product or architectural requests from product references or accepted concepts into dimensioned CAD, materials, and fast native previews. Use when coordinating those stages or specialist subagents; simple renders and single-channel edits use their focused skills directly.
 ---
 
 # Digital twin iteration
 
-Read the current resume section of `HANDOFF.md` and `AGENTS.md`. Identify the
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
+Read the current project handoff and agent instructions, when supplied. Identify the
 requested deliverable and the current live Blender owner before choosing work.
 Preserve staged intent: research, CAD-only, installation, local save and publication
 are distinct actions. A request to model first does not authorize installation.
@@ -15,12 +28,13 @@ are distinct actions. A request to model first does not authorize installation.
 | Common ask | Load only the relevant workflow |
 |---|---|
 | Find a product or match a reference | [Product evidence](references/product-evidence.md); research first, no scene mutation |
-| Reconstruct a named product or deepen fixture detail | `skills/luacad-fidelity-modeling/SKILL.md`, which selects the complete LuaCAD toolkit; authorized specialist work uses `luacad_modeler` |
-| Prepare frozen standalone CAD/materials as a saved product blend | `skills/product-asset-preparation/SKILL.md`; `asset_preparer` runs isolated CPU authoring alongside live OVRTX |
+| Reconstruct a named product or deepen fixture detail | `../luacad-fidelity-modeling/SKILL.md`, which selects the complete LuaCAD toolkit; authorized specialist work uses `luacad_modeler` |
+| Prepare frozen standalone CAD/materials as a saved product blend | `../product-asset-preparation/SKILL.md`; `asset_preparer` runs isolated CPU authoring alongside live OVRTX |
 | Revise room dimensions or openings | `architecture-drawings-to-3d`, room XML and `house/ROOM-CONTRACT.md` |
 | Install an accepted multi-room fixture layout or repeated fixtures with host openings | [Scoped fixture installation](references/scoped-fixture-installation.md); prepare affected parts before live control changes |
-| Bring accepted design details into the room | `skills/image-feedback-to-cad/SKILL.md`; source/import contract only for geometry |
-| Change finish, grain, sheen or texture | `skills/material-reference-lookdev/SKILL.md`; ceramic-specific defects use `skills/tile-finish-lookdev/SKILL.md` |
+| Bring accepted design details into the room | `../image-feedback-to-cad/SKILL.md`; source/import contract only for geometry |
+| Change finish, grain, sheen or texture | `../material-reference-lookdev/SKILL.md`; ceramic-specific defects use `skills/tile-finish-lookdev/SKILL.md` |
+| Plan tile modules, mixed sizes, trims or ordering | `skills/tile-layout-planning/SKILL.md`; authorized dimensional research uses `tile_layout_planner` |
 | Change native camera exposure, pose, optics or movement | `skills/camera-composition/SKILL.md`; no CAD rebuild |
 | Tune image grading/exposure compensation, grain or bloom | [Retained-image iteration](references/retained-image-iteration.md), when the retained source and compositor support it |
 | Save an alternative or move shared components | `skills/room-variations/SKILL.md` |
@@ -31,6 +45,15 @@ are distinct actions. A request to model first does not authorize installation.
 Start from the smallest useful affected view. Reuse unchanged geometry, cameras,
 materials and evidence. Capture another view only when the requested detail cannot
 be judged in that image. Report timings as observations, never projected savings.
+
+## Inspect and apply only the affected scope
+
+For repeated Blender identity/material/bounds queries use
+`blender/tools/inspect_remodel.py` through MCP. Pass explicit names, patterns,
+collections or a prepared installation receipt; request evaluated geometry only
+when needed. Reuse the full baseline for same-query deltas. See
+[scoped helper calls](references/scoped-helper-calls.md) for compact invocations,
+operation receipt recovery and dependency manifests.
 
 ## Delegate useful depth
 
@@ -48,7 +71,7 @@ actual resulting image; correct dimensions or a successful USD export alone do
 not establish a realistic twin. Label inferred details and native support limits.
 
 Existing dimensioned cabinetry improved from renders/generated concepts routes to
-`cabinetry_refiner` and `skills/cabinetry-refinement/SKILL.md`; reuse existing source
+`cabinetry_refiner` and `../cabinetry-refinement/SKILL.md`; reuse existing source
 and specialist roles under a numeric dimension lock instead of reconstructing from imagery.
 
 For accepted image-to-existing-furniture refinement, preserve the latest user scope

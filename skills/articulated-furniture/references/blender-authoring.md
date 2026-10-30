@@ -1,5 +1,10 @@
 # Blender-owned articulated furniture
 
+Project adapter note: paths and commands outside this skill directory describe
+optional integration examples. They are not bundled dependencies. Locate a
+maintained equivalent and verify its interface before execution; no historical
+helper, local service or schema is assumed to be installed.
+
 ## Ownership
 
 Manual → named CAD geometry + Articraft recipe → Blender authoring → add-on
@@ -66,7 +71,7 @@ the edits and display it through the Blender/OVRTX path. Check reset preserves
 authoring state. Then repeat with the full cabinet.
 
 The maintained local evidence is
-`/home/mbickley/product-to-3d/spikes/blender-articulation-handoff/ENGINEERING-HANDOFF.md`.
+`/absolute/product-pipeline/spikes/blender-articulation-handoff/ENGINEERING-HANDOFF.md`.
 It supersedes older standalone/core-only tests: actual gRPC live tilt/render and
 native Blender Play/pause/Reset have been validated with source add-on changes.
 Installed add-on deployment is a separate gate. Use OVRTX when requested; do not
@@ -87,7 +92,7 @@ changes in the engineering handoff, not a new transport abstraction per asset.
 
 ## SimReady and robot asset delivery
 
-Use `/home/mbickley/product-to-3d/spikes/simready-kitchenette/README.md` and its
+Use `/absolute/product-pipeline/spikes/simready-kitchenette/README.md` and its
 small scripts. The recipe-book `contact_recipe.py` implements per-panel boxes,
 source-declared box through-openings, and spherical knob contacts. The importer
 stores proxies/materials/grasp curves in `.blend`; `export_blend.py` subsequently

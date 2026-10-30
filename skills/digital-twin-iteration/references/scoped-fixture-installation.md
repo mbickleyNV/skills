@@ -1,5 +1,10 @@
 # Install an accepted fixture layout without replaying the house
 
+Project adapter note: paths and commands outside this skill directory describe
+optional integration examples. They are not bundled dependencies. Locate a
+maintained equivalent and verify its interface before execution; no historical
+helper, local service or schema is assumed to be installed.
+
 Use for a reviewed multi-room fixture placement that also changes apertures or
 other host geometry. Keep the accepted source-local positions/counts; installation
 does not restart layout optimization. Session authorization carries forward.
@@ -23,6 +28,11 @@ admission or rebuilding the tile family.
 
 Use `blender/tools/prepare_scoped_installation.py` with a
 `scoped-cad-installation/1` manifest containing explicit room/part selections.
+For explicit dependencies use schema `/2` through
+`prepare_house_import_batches.py --manifest scope.json --output scratch/packet`;
+see [scoped helper calls](scoped-helper-calls.md). Only selected scopes and their
+explicit `requires` closure are prepared. Procedural producers keep their dedicated
+routes; this manifest does not discover unknown dependencies.
 Optional `material_keys` maps the exact selected CAD IDs to known fallback keys;
 existing valid artist bindings still win. Supply explicit fallback intent for
 unsupported semantic classes such as photo-derived cove plaster. Check the actual
@@ -85,3 +95,11 @@ exporter/runtime behavior. Session reuse alone does not prove sparse updates.
 Save through the guarded project helper when the user authorized authoring. Preserve
 unpublished state. No blanket house re-render, product turntable, tile reauthoring,
 backend restart or publication follows implicitly from fixture installation.
+
+
+For ordinary CAD application use `apply_prepared_installation.apply(prepared,
+receipt)` at an exclusive idle boundary. It performs complete admission before
+mutation and records each completed room import. Read the receipt after a lost
+reply. `failed` or `running` receipts are not permission to repeat an operation:
+reconcile uncertain steps and preserve completed ones first. Fixture-specific
+control detach/restore remains outside this generic CAD runner.

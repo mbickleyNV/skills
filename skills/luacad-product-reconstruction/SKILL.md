@@ -5,6 +5,19 @@ description: Reconstruct dimension-driven product assemblies in LuaCAD from phot
 
 # LuaCAD product reconstruction
 
+## Project adaptation
+
+This is a generalized workflow. Use the active project's source, scene, renderer
+and save/publication rules. Names such as `HANDOFF.md`, room XML, specialist
+profiles, `blender/tools/`, studio assets and pipeline contracts are integration
+examples, not files supplied by this skill. Discover their maintained equivalents
+before using them. Only helpers inside this skill directory are bundled. If a
+required adapter or asset is absent, report that stage as unavailable and deliver
+the supported work; do not invent a command, schema or successful native result.
+Use specialist roles only when delegation is authorized and available; otherwise
+the coordinator performs the same bounded work. Keep one live Blender owner.
+
+
 For long manuals or parallel subassembly work, read
 [large-assembly coordination](references/large-assemblies.md) before dividing CAD
 ownership. Keep page evidence and shared interfaces outside the conversation.
@@ -58,9 +71,9 @@ a request for a learned policy still needs fresh learned-policy evaluation.
 Build independent CAD modules and contact/joint metadata in parallel from shared
 parameters, then assemble the complete furniture before mechanism or robot tests.
 Before delegation, share a runnable interface example with explicit length/angle
-units, body ownership and axis enums; validate each module before import. The
-implemented `simready-kitchenette/examples/joint-interface.lua` emits canonical
-radians, and the intent adapter rejects mismatched units and implausible hinges.
+units, body ownership and axis enums; validate each module before import. A project adapter may supply a joint-interface example; require explicit
+radians/degrees and reject mismatched units and implausible hinges. The historical
+`simready-kitchenette` example is not bundled with this skill.
 Validate the selected drawer in place with all surrounding collision geometry;
 do not substitute an isolated drawer coupon. Non-contact visual detailing can
 continue in parallel, but changes affecting clearance require an assembled check.
@@ -74,10 +87,10 @@ support. Blender becomes authority after import. Robot mounting, TCP and policy
 rewards belong downstream. Cache unchanged exports and check only affected parts;
 do not re-audit the environment or retrain a stock baseline for each new PDF.
 
-Use the implemented `cad-mechanism/1` example and units/frame contract at
-`/home/mbickley/product-to-3d/spikes/simready-kitchenette/examples/README.md`.
-Emit that intent with named geometry from shared LuaCAD parameters; do not copy
-the historical kitchenette's body-name heuristics or physical estimates.
+When the installed consumer supports `cad-mechanism/1`, follow its current
+units/frame schema and emit intent from shared LuaCAD parameters. The historical
+`simready-kitchenette` adapter is an optional external example; do not copy its
+body-name heuristics or physical estimates or assume its schema is installed.
 
 ## Part and connection model
 

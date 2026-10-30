@@ -1,9 +1,14 @@
 # Specialist packets and integration
 
+Project adapter note: paths and commands outside this skill directory describe
+optional integration examples. They are not bundled dependencies. Locate a
+maintained equivalent and verify its interface before execution; no historical
+helper, local service or schema is assumed to be installed.
+
 For repeated product-detail or material work, reuse `.codex/agents/product_detail.toml`
 or `.codex/agents/material_specialist.toml` and `docs/specialists/CONTRACT.md`.
 For implementing high-fidelity CAD source, use `.codex/agents/luacad_modeler.toml`
-with `skills/luacad-fidelity-modeling/SKILL.md`; include required detail ledger,
+with `../../luacad-fidelity-modeling/SKILL.md`; include required detail ledger,
 assigned modules and per-part normals/UV handoff in the packet.
 Attach the relevant knowledge entries and a named task checkpoint. The coordinator
 merges proposed durable findings after review; workers do not promote their own
@@ -28,6 +33,12 @@ Each task brief contains:
   the owner to merge. Freeze exports and report their digest before integration.
 
 Useful independent assignments:
+
+**Tile layout planner:** for mixed formats, trim or order quantities, supply affected
+room XML/LuaCAD and existing planning/catalog paths, fixed finish planes, candidate
+sizes and quantity assumptions. Reuse `tile_layout_planner` and
+`skills/tile-layout-planning/SKILL.md`; receive proposed named-element deltas, repeat
+cell/cut math and per-line-item costs. It does not write source or control Blender.
 
 **Reference/detail investigator:** inspect manufacturer drawings and close images;
 return variant, measured envelope, missing visible details and uncertainty. Investigate
