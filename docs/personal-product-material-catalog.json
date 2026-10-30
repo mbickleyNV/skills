@@ -1,0 +1,149 @@
+{
+  "schema": "personal-product-material-catalog.v1",
+  "version": "0.1.0",
+  "catalog_root": "../skills",
+  "persona_entrypoints": {
+    "product_image_to_movie": "product-image-to-turntable",
+    "material_only": "image-material-analyze",
+    "cad_only": "luacad-fidelity-modeling",
+    "accepted_blender_asset_to_movie": "product-turntable"
+  },
+  "skills": [
+    {
+      "name": "luacad-product-reconstruction",
+      "path": "luacad-product-reconstruction/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "luacad-fidelity-modeling",
+      "path": "luacad-fidelity-modeling/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "luacad-manufactured-details",
+      "path": "luacad-manufactured-details/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "luacad-continuous-geometry",
+      "path": "luacad-continuous-geometry/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "luacad-2d-to-3d-complexity",
+      "path": "luacad-2d-to-3d-complexity/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "product-evidence-extractor",
+      "path": "product-evidence-extractor/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "product-asset-preparation",
+      "path": "product-asset-preparation/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "product-turntable",
+      "path": "product-turntable/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "blender-product-assembly",
+      "path": "blender-product-assembly/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "appliance-installation",
+      "path": "appliance-installation/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "articulated-furniture",
+      "path": "articulated-furniture/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "digital-twin-iteration",
+      "path": "digital-twin-iteration/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "material-reference-lookdev",
+      "path": "material-reference-lookdev/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-feedback-to-cad",
+      "path": "image-feedback-to-cad/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "cabinetry-refinement",
+      "path": "cabinetry-refinement/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "existing-asset-refinement",
+      "path": "existing-asset-refinement/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-material-analyze",
+      "path": "image-material-analyze/SKILL.md",
+      "status": "ready"
+    },
+    {
+      "name": "image-material-architecture",
+      "path": "image-material-architecture/SKILL.md",
+      "status": "ready"
+    },
+    {
+      "name": "image-material-assemble",
+      "path": "image-material-assemble/SKILL.md",
+      "status": "ready"
+    },
+    {
+      "name": "image-material-calibrate",
+      "path": "image-material-calibrate/SKILL.md",
+      "status": "ready"
+    },
+    {
+      "name": "image-material-detail-pilot",
+      "path": "image-material-detail-pilot/SKILL.md",
+      "status": "ready"
+    },
+    {
+      "name": "image-material-diagnostics",
+      "path": "image-material-diagnostics/SKILL.md",
+      "status": "ready"
+    },
+    {
+      "name": "image-material-lobe-prompts",
+      "path": "image-material-lobe-prompts/SKILL.md",
+      "status": "ready"
+    },
+    {
+      "name": "image-material-review",
+      "path": "image-material-review/SKILL.md",
+      "status": "ready"
+    },
+    {
+      "name": "image-material-spatial-design",
+      "path": "image-material-spatial-design/SKILL.md",
+      "status": "ready"
+    },
+    {
+      "name": "image-material-texture-maps",
+      "path": "image-material-texture-maps/SKILL.md",
+      "status": "ready"
+    },
+    {
+      "name": "product-image-to-turntable",
+      "path": "product-image-to-turntable/SKILL.md",
+      "status": "ready"
+    }
+  ],
+  "scope": "Personal experimental workflows; no NVIDIA verification or runtime certification. All ten material siblings are required for their bundle; product skills remain independently useful."
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "image-material-bundle.v1",
+  "version": "0.15.0",
+  "namespace": "image-material-",
+  "catalog_root": "../..",
+  "entrypoint": "image-material-analyze",
+  "persona_entrypoints": {
+    "image_to_material_agent": "image-material-analyze"
+  },
+  "skills": [
+    {
+      "name": "image-material-analyze",
+      "path": "image-material-analyze/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-material-architecture",
+      "path": "image-material-architecture/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-material-diagnostics",
+      "path": "image-material-diagnostics/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-material-spatial-design",
+      "path": "image-material-spatial-design/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-material-detail-pilot",
+      "path": "image-material-detail-pilot/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-material-lobe-prompts",
+      "path": "image-material-lobe-prompts/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-material-texture-maps",
+      "path": "image-material-texture-maps/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-material-calibrate",
+      "path": "image-material-calibrate/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-material-assemble",
+      "path": "image-material-assemble/SKILL.md",
+      "status": "experimental"
+    },
+    {
+      "name": "image-material-review",
+      "path": "image-material-review/SKILL.md",
+      "status": "experimental"
+    }
+  ],
+  "portability": "Move all ten member directories as siblings. Resolve catalog_root relative to this metadata file. No absolute host paths or sample assets are bundled.",
+  "dependencies": {
+    "analysis": "image inspection",
+    "generation": "host image-generation tool and its applicable instructions",
+    "assembly": "MaterialX/OpenPBR authoring and validation",
+    "rendering": "documented installed renderer client; OVRTX is the initial adapter"
+  },
+  "origin": {
+    "classification": "research-authored",
+    "authored": "2026-10-27",
+    "revision": "0.15.0",
+    "license": "Published documentation under CC-BY-4.0 and bundled source code under Apache-2.0, following the destination catalog LICENSE-CC-BY-4.0 and LICENSE-APACHE. Personal research-authored contribution; no NVIDIA certification claimed.",
+    "third_party_content": "Public technical references linked, no third-party code, images, or sample materials bundled.",
+    "modifications": "Research-authored v0.7 splits spatial design into a conditional eighth skill, adds regional distribution and multiscale feature ownership, explicit overlap semantics, verified scalar encodings, generated-isolate escalation, immutable benchmark diagnostics and single-image series review. No case images, third-party code or runtime implementation bundled. v0.7.1 adds conditional exemplar inspection, resolved intermediate structure, independent fuzz color/angular response, orientation versus anisotropy, and final-size flake survival checks. v0.7.2 strengthens encoding invalidation and negative controls, rejects unsupported gamma compensation, and isolates newly added transport inputs when color shifts. v0.8 adds conditional spatial finish routing: separate normal/roughness/reflection-strength requirements, subtle matte/conformal coat alternatives, generated field contracts, final-range auditing, native controls and generated-to-native reflection review. No case assets or runtime implementations bundled. v0.9 adds conditional coordinate-transfer routing for global/local fields, projection-aware normals and angular checks; preserves hypotheses when generated controls fail; separates runtime fallback from optical evidence; and clarifies scale-dependent field correlation and interface relationships. Eight siblings retained; no material-specific recipes, case assets or runtime implementations bundled. v0.10 adds conditional exemplar research: active-graph tracing, multi-population response versus parameter averaging, primitive/input unit semantics, event/ablation diagnostic atlases, evidence-tagged mechanism records, and strict separation from held-out single-image trials. Explicit map-to-response quality matrix evaluates occupied chart interiors on fixed geometry without treating atlas seams as failure. Control authoring verifies effective connections and bindings; inherited-connection mistakes are superseded, and residual event energy is not mistaken for an exact component isolate. v0.11 splits conditional detail-pilot acceptance into a ninth skill; adds explicit source identity, feature-footprint crop comparisons, separate identity/data/registration findings, population representation choices and a source-fidelity veto independent of native influence. No product recipes, images or runtime implementations bundled. v0.11.1 adds source-informed adaptations for final exposed prompt audits and graph-preserving edits/readback from NVIDIA usd-content-agents, plus a narrower exemplar trigger. No external code or text copied. v0.12 independently authors general masked-height calculus and interface composition guidance, flat/directional normal-path probes, a conditional detail-free baseline with effective sampling checks, and optional compiled-material capability separation. Existing prompt and graph-preservation adaptations retained. No private text, code, identifiers, assets or runtime workarounds bundled. v0.13 adds conditional transport diagnostics: hypothesis-selected built-in AOVs and LPE batches, light/depth distinctions, matched pass-under-intervention tests, staged support evidence and output decoding. Adds source-inspected textile construction guidance separating bundle topology, individual fibers and aggregate response. No exemplar assets, third-party code or runtime implementation bundled. v0.14 adds hypothesis detail-retention routing, composed graph/value/coat exemplar inspection, effective distributions and normal slope diagnostics, explicit visual-target authority, and empty UV-index validation. v0.14.1 clarifies source authority after generated-study feedback, polished-region versus transparent-interface hypotheses, opaque film over textiles, compound-mixture endpoint failures, and mask-to-profile alternatives to invalid generated height. v0.15 splits mapping-blend diagnostics and coherent-deformation morphology into conditional references within the ten-skill bundle. Adds same-interface chart/projection/synthesis controls, per-family coordinate ownership, actual translated-sampler qualification, independent interface/AOV limits, numerical and temporal checks, and source-anchored fold-versus-vein prompt preservation. Trial sharpness/gain values are evidence-scoped, not defaults; no runtime code or case assets bundled.",
+    "adaptation_sources": [
+      {
+        "repository": "https://github.com/NVIDIA-Omniverse/usd-content-agents",
+        "revision": "0709377ed35fb066361a0d6735d21984b885fe36",
+        "source_license": "Apache-2.0 for source; assets have distinct terms",
+        "use": "Workflow concepts adapted with pinned links; no source code, text or assets copied",
+        "scope": "Public reference inspected independently; no repository-identity equivalence assumed."
+      }
+    ],
+    "publication": "Personal portable derivative of v0.15.0; original research snapshot retained. No third-party assets or renderer implementation bundled."
+  },
+  "validation_scope": "Ten-skill frontmatter/catalog, relative links, metadata, sanitization, whitespace and independent realistic planning forward test. No runtime support or material-fidelity claim follows from documentation validation.",
+  "validation_status": "v0.15: all ten skills pass standard validation and catalog/metadata checks; relocated bundle relative links and public-boundary sanitization pass. Independent observation-only forward test routes coherent morphology, projection/synthesis, interface ownership, numerical validity and continuous motion separately without case conclusions. No image-generation, runtime-support or material-fidelity claim is established by this skill validation."
+}

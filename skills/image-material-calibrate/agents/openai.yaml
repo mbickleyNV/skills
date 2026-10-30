@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Material · 5 · Calibrate"
+  short_description: "Separate optical parameters from scene and scale errors"
+  default_prompt: "Use $image-material-calibrate to plan and verify this material stage using the available evidence and declared uncertainties."

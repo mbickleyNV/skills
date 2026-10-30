@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Material · 7 · Review"
+  short_description: "Compare material lobes and resolve fidelity failures"
+  default_prompt: "Use $image-material-review to compare this material with its reference and generated studies, then resolve the defining visual failures."

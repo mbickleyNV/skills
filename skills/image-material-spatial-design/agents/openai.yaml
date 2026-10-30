@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Material · Spatial Design"
+  short_description: "Plan multiscale detail and regional material fields"
+  default_prompt: "Use $image-material-spatial-design to plan feature shape, distribution, coordinates and property ownership before generating material maps."

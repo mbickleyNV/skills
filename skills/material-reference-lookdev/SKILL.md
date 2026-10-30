@@ -5,6 +5,15 @@ description: Create or refine reference-based product finishes, including image-
 
 # Material reference look development
 
+
+For complex single-image MaterialX/OpenPBR reconstruction, start the material case
+with [image-material-analyze](../image-material-analyze/SKILL.md). Its ten-skill
+route owns detailed evidence, layers, generated studies/maps and native lobe/AOV
+validation; this skill still owns applying the accepted finish to the requested
+product/scene. Use [product-image-to-turntable](../product-image-to-turntable/SKILL.md)
+when accurate product geometry and a movie are also requested. Reuse accepted
+case evidence instead of duplicating both production loops.
+
 ## Project adaptation
 
 This is a generalized workflow. Use the active project's source, scene, renderer

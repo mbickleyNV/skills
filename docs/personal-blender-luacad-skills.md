@@ -4,6 +4,11 @@ The current generalized LuaCAD/product set is published on this fork's `main`
 branch under `skills/`. These personal workflows are separate from the inherited
 NVIDIA verified/signed catalog; no NVIDIA signature or certification is claimed.
 
+For image → CAD → detailed MaterialX/OpenPBR → native turntable work, use
+[the combined product-image workflow](../skills/product-image-to-turntable/SKILL.md).
+Its [material bundle index](personal-image-material-skills.md) lists the ten
+portable material skills; install them alongside this product set.
+
 ## Current generalized set
 
 | Skill | Purpose |

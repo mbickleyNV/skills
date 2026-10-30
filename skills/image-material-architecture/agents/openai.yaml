@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Material · 2 · Architecture"
+  short_description: "Plan layers, input coverage and physical representation"
+  default_prompt: "Use $image-material-architecture to plan and verify this material stage using the available evidence and declared uncertainties."

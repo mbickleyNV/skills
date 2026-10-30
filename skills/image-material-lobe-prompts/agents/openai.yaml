@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Material · 3 · Lobe Prompts"
+  short_description: "Prompt and critique approximate lobe appearance"
+  default_prompt: "Use $image-material-lobe-prompts. Create and inspect detailed lobe-study prompts from this material analysis."

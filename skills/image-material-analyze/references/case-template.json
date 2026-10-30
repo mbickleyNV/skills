@@ -1,0 +1,118 @@
+{
+  "schema": "image-material-case.v3",
+  "case_id": "",
+  "requested_scope": "",
+  "stage_status": {
+    "analysis": "pending",
+    "lobe_studies": "pending",
+    "texture_maps": "pending",
+    "assembly": "pending",
+    "render_review": "pending",
+    "architecture": "pending",
+    "calibration": "pending",
+    "spatial_design": "pending",
+    "detail_pilot": "pending",
+    "diagnostics": "pending"
+  },
+  "sources": [],
+  "layout": {
+    "revision": "",
+    "authority_artifact_id": "",
+    "target_regions": [],
+    "coordinate_convention": "",
+    "physical_scale": null,
+    "coverage_mode": "",
+    "assumptions": []
+  },
+  "evidence": [],
+  "hypotheses": [],
+  "features": [],
+  "prompts": [],
+  "artifacts": [],
+  "channel_contracts": [],
+  "connections": [],
+  "target": {
+    "materialx_version": null,
+    "openpbr_version": null,
+    "renderer_version": null,
+    "capabilities": []
+  },
+  "reviews": [],
+  "knowledge": {
+    "nodes": [],
+    "edges": []
+  },
+  "remaining_uncertainties": [],
+  "fidelity_target": {
+    "requested_quality": "",
+    "presentation_conditions": [],
+    "defining_criteria": [],
+    "user_budget": null
+  },
+  "mechanism_inventory": [],
+  "study_cells": [],
+  "calibration": [],
+  "quality_acceptance": {
+    "status": "pending",
+    "findings": [],
+    "blocking_deltas": [],
+    "next_experiments": []
+  },
+  "layer_plan": {
+    "status": "pending",
+    "components": [],
+    "relationships": [],
+    "combination_operations": [],
+    "known_approximations": []
+  },
+  "prompt_contracts": [],
+  "feature_checks": [],
+  "revision_log": [],
+  "transport_contracts": [],
+  "benchmark": {
+    "status": "pending",
+    "artifact_id": "",
+    "geometry_hash": "",
+    "uv_hash": "",
+    "rig_settings": {},
+    "diagnostic_variants": []
+  },
+  "input_audit": {
+    "status": "pending",
+    "definition": {},
+    "inputs": [],
+    "external_controls": []
+  },
+  "representation_plan": [],
+  "experiment_plan": [],
+  "feature_packets": [],
+  "detail_targets": [],
+  "sampling_checks": [],
+  "detail_pilots": [],
+  "spatial_plan": {
+    "status": "pending",
+    "families": [],
+    "regional_controls": [],
+    "composition": [],
+    "portable_defaults": []
+  },
+  "finish_fields": [],
+  "quality_verdicts": {
+    "execution": {
+      "status": "pending",
+      "evidence_ids": [],
+      "blocking_feature_ids": []
+    },
+    "mechanism_influence": {
+      "status": "pending",
+      "evidence_ids": [],
+      "blocking_feature_ids": []
+    },
+    "source_fidelity": {
+      "status": "pending",
+      "evidence_ids": [],
+      "blocking_feature_ids": []
+    }
+  },
+  "diagnostic_plan": []
+}

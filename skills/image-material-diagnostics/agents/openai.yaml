@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Material · Transport diagnostics"
+  short_description: "Choose and verify hypothesis-driven light-path tests"
+  default_prompt: "Use $image-material-diagnostics to select and verify native path outputs and matched controls for this material's competing hypotheses."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Material · Detail Pilot"
+  short_description: "Test source detail before full material assembly"
+  default_prompt: "Use $image-material-detail-pilot to assess whether defining source details survive the selected maps and native rendering, and route the earliest failure."

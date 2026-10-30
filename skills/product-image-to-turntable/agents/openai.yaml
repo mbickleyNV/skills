@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Image to CAD and Turntable"
+  short_description: "Build detailed CAD, rich materials and native movies"
+  default_prompt: "Use $product-image-to-turntable to reconstruct this product image as editable CAD with photoreal materials and render a studio turntable."

@@ -1,0 +1,376 @@
+{
+  "schema": "personal-material-publication.v1",
+  "source_bundle_revision": "0.15.0 working snapshot identified by per-file SHA256; source skill files retained unchanged",
+  "destination_base": "cb649cc44264bdaa98343d01ab861119d459a1ad",
+  "new_coordinator_version": "0.1.0",
+  "license": {
+    "documentation": "CC-BY-4.0",
+    "code": "Apache-2.0",
+    "basis": "Destination catalog terms; personal research-authored work. Public technical references linked in context; no third-party assets, code or quoted manuals copied."
+  },
+  "certification": "Personal experimental contribution; no NVIDIA verification, signature or certification",
+  "files": {
+    "skills/image-material-analyze/SKILL.md": {
+      "source_sha256": "08882fbad31b008d4b6f2dba85b515394b8e4210142969720934edeb1e554936",
+      "published_sha256": "08882fbad31b008d4b6f2dba85b515394b8e4210142969720934edeb1e554936",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-analyze/references/questions.md": {
+      "source_sha256": "7040f298d4b0494e90ac1e71087a4230b95db95176a96aa68dd03ef573a100bb",
+      "published_sha256": "7040f298d4b0494e90ac1e71087a4230b95db95176a96aa68dd03ef573a100bb",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-analyze/references/handoff.md": {
+      "source_sha256": "1ba84325a470e1435ade44f345ada3fd6e3636749827b0faffdfab9683542354",
+      "published_sha256": "1ba84325a470e1435ade44f345ada3fd6e3636749827b0faffdfab9683542354",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-analyze/references/case-template.json": {
+      "source_sha256": "71e1d063a9271c3b53b7cfc5dc31372f4e0f6f4295787c53ef096c8b2d3f8795",
+      "published_sha256": "71e1d063a9271c3b53b7cfc5dc31372f4e0f6f4295787c53ef096c8b2d3f8795",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-analyze/references/bundle.json": {
+      "source_sha256": "04939baf8e4504f80783ad87c5a1f57fc8712863a5c6a2a0c615d3cb71e47f09",
+      "published_sha256": "b4bb85630af0e7ab77305f1750757eaa986347167896dc4a5d71a3193219f649",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Publication license/provenance metadata following destination catalog terms"
+    },
+    "skills/image-material-analyze/references/coverage.md": {
+      "source_sha256": "1315b9f0d68dc7b0cdcdc2626b4fb95cdb083f023287e3bdfd66cf950282cbad",
+      "published_sha256": "1315b9f0d68dc7b0cdcdc2626b4fb95cdb083f023287e3bdfd66cf950282cbad",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-analyze/references/feature-preservation.md": {
+      "source_sha256": "464dcb0aade5bb2568ec9fd362b32204e0831ce66988a4a619bd4bd1aab886d5",
+      "published_sha256": "464dcb0aade5bb2568ec9fd362b32204e0831ce66988a4a619bd4bd1aab886d5",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-analyze/references/layer-architecture.md": {
+      "source_sha256": "f7ce94572bf7ad0050fdd9e9349c0c6e40fc1c6e02e390b3dbbc3e02cb967145",
+      "published_sha256": "f7ce94572bf7ad0050fdd9e9349c0c6e40fc1c6e02e390b3dbbc3e02cb967145",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-analyze/agents/openai.yaml": {
+      "source_sha256": "70cd5dc85da01696228e4bec603d010e0cdf7c49bafd2e270b3d953d28f4e4b2",
+      "published_sha256": "70cd5dc85da01696228e4bec603d010e0cdf7c49bafd2e270b3d953d28f4e4b2",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-architecture/SKILL.md": {
+      "source_sha256": "e6abd5e22da4223719edad5de5fe4350dacfa4532aaae81d09c66b7753e24a7b",
+      "published_sha256": "e6abd5e22da4223719edad5de5fe4350dacfa4532aaae81d09c66b7753e24a7b",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-architecture/references/input-coverage.md": {
+      "source_sha256": "1740931170c66c5510425746061df700a8e77c38095c9d2db97d585f07313e54",
+      "published_sha256": "1740931170c66c5510425746061df700a8e77c38095c9d2db97d585f07313e54",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-architecture/references/representation.md": {
+      "source_sha256": "1a1f0942df7c6c493c4366b83b6e983ce6349ec28f1242c1449964605bfba935",
+      "published_sha256": "1a1f0942df7c6c493c4366b83b6e983ce6349ec28f1242c1449964605bfba935",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-architecture/references/structured-scattering.md": {
+      "source_sha256": "54504b6b8fd7991f393ec3b4ad772ca454b9e27471fabb5d69c278b385657d41",
+      "published_sha256": "54504b6b8fd7991f393ec3b4ad772ca454b9e27471fabb5d69c278b385657d41",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-architecture/references/exemplar-research.md": {
+      "source_sha256": "5fe79b6ffb148cbe21179c9d65c993f59ce43885c8880e35bafa0873c857f9d1",
+      "published_sha256": "5fe79b6ffb148cbe21179c9d65c993f59ce43885c8880e35bafa0873c857f9d1",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-architecture/references/population-models.md": {
+      "source_sha256": "b0034f5d27d4aed91c67dbe3b2f86e808951d62ed0d480fef3029dcc96984c56",
+      "published_sha256": "b0034f5d27d4aed91c67dbe3b2f86e808951d62ed0d480fef3029dcc96984c56",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-architecture/references/textile-construction.md": {
+      "source_sha256": "be30e6f225dd456738c7dad460049faa2ff0aacf9e0b64707dba1828b9f6ab4d",
+      "published_sha256": "be30e6f225dd456738c7dad460049faa2ff0aacf9e0b64707dba1828b9f6ab4d",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-architecture/references/built-up-exemplars.md": {
+      "source_sha256": "f955c2331e4bfc406badc22c1e0b4f77bdcf4d4fec133ff4708572b0971d632c",
+      "published_sha256": "f955c2331e4bfc406badc22c1e0b4f77bdcf4d4fec133ff4708572b0971d632c",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-architecture/scripts/inventory_inputs.py": {
+      "source_sha256": "f3c79afbe87f67b91d642d9916dff3230c0ca545878a24cdd60cea1c536ca37a",
+      "published_sha256": "f3c79afbe87f67b91d642d9916dff3230c0ca545878a24cdd60cea1c536ca37a",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-architecture/agents/openai.yaml": {
+      "source_sha256": "f4378c9edabc5f301a5e2c285b2f2e178e09a8ba37b3beed8472c7497506e07e",
+      "published_sha256": "f4378c9edabc5f301a5e2c285b2f2e178e09a8ba37b3beed8472c7497506e07e",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-assemble/SKILL.md": {
+      "source_sha256": "40a4473f3e8b9dfb7fad87bd54b257e40fafde47b207300165bb25cb5787f710",
+      "published_sha256": "40a4473f3e8b9dfb7fad87bd54b257e40fafde47b207300165bb25cb5787f710",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-assemble/references/assembly.md": {
+      "source_sha256": "d9b4444745b41b8dd103efb333805310c471c8c96613e2337190d53b78308776",
+      "published_sha256": "d9b4444745b41b8dd103efb333805310c471c8c96613e2337190d53b78308776",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-assemble/references/calibration.md": {
+      "source_sha256": "260c0a0e712ba63b443779b75280e708814f570d5fb3c7a1dfad9b0dd7ecd21d",
+      "published_sha256": "260c0a0e712ba63b443779b75280e708814f570d5fb3c7a1dfad9b0dd7ecd21d",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-assemble/agents/openai.yaml": {
+      "source_sha256": "5b346ddee46ca2dbe193cea7657b0460eefd86544dc109b81566e1415e54f01e",
+      "published_sha256": "5b346ddee46ca2dbe193cea7657b0460eefd86544dc109b81566e1415e54f01e",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-calibrate/SKILL.md": {
+      "source_sha256": "c1351e1c0f8e310559fdbd71be88916c7cf00116cedd6d621eeff1a8ebd48035",
+      "published_sha256": "c1351e1c0f8e310559fdbd71be88916c7cf00116cedd6d621eeff1a8ebd48035",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-calibrate/references/parameter-fitting.md": {
+      "source_sha256": "6c1861ba3cb694bf55a5a8ac6754b6affa6bb92ec72f451c2613aa005d89c6db",
+      "published_sha256": "6c1861ba3cb694bf55a5a8ac6754b6affa6bb92ec72f451c2613aa005d89c6db",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-calibrate/references/controls.md": {
+      "source_sha256": "ba409797dfbcf2ca3830df0dc5fc7054ed3721eaedae0bca4d264161792e8775",
+      "published_sha256": "ba409797dfbcf2ca3830df0dc5fc7054ed3721eaedae0bca4d264161792e8775",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-calibrate/agents/openai.yaml": {
+      "source_sha256": "97432cbfffde76906fd174e4bf4a0fce81657bbb49e3b509707a406c1432a3bb",
+      "published_sha256": "97432cbfffde76906fd174e4bf4a0fce81657bbb49e3b509707a406c1432a3bb",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-detail-pilot/SKILL.md": {
+      "source_sha256": "9505f319d28ce81c769a4b72e9ab1c5f4e644c04c2141f5e07d4ec1cb19f1843",
+      "published_sha256": "9505f319d28ce81c769a4b72e9ab1c5f4e644c04c2141f5e07d4ec1cb19f1843",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-detail-pilot/agents/openai.yaml": {
+      "source_sha256": "d9bf281dddb1eb878c458da24134f72d5f3f0256d5ec4cf4f4a601701c8634c4",
+      "published_sha256": "d9bf281dddb1eb878c458da24134f72d5f3f0256d5ec4cf4f4a601701c8634c4",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-detail-pilot/references/detail-retention.md": {
+      "source_sha256": "4d194a13ee4873ae8020c1a6852d6b47afec75d76ca71eb2c613ab5e475eeebe",
+      "published_sha256": "4d194a13ee4873ae8020c1a6852d6b47afec75d76ca71eb2c613ab5e475eeebe",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-diagnostics/SKILL.md": {
+      "source_sha256": "2bbf8bb665807b659b930f88902cfae25e4e7566c5157c91a79c15cd7dd836ae",
+      "published_sha256": "2bbf8bb665807b659b930f88902cfae25e4e7566c5157c91a79c15cd7dd836ae",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-diagnostics/agents/openai.yaml": {
+      "source_sha256": "2a695c8ae90de2cf52c696b6799c7cfa28f4d8b4c10f8436800197c00dedcd86",
+      "published_sha256": "2a695c8ae90de2cf52c696b6799c7cfa28f4d8b4c10f8436800197c00dedcd86",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-diagnostics/references/selection-strategies.md": {
+      "source_sha256": "3483b288a2271de12901003999fa5956b35007c315aa4ae2af5341ce4d09be8f",
+      "published_sha256": "3483b288a2271de12901003999fa5956b35007c315aa4ae2af5341ce4d09be8f",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-diagnostics/references/ovrtx-lpe.md": {
+      "source_sha256": "3328ad790d178d2528d65b737046a91c91f7f52fff8a008d4ca296e258a6d98e",
+      "published_sha256": "3328ad790d178d2528d65b737046a91c91f7f52fff8a008d4ca296e258a6d98e",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-lobe-prompts/SKILL.md": {
+      "source_sha256": "28fc47a16038707c4a825d816d9aa0f547fb244543c758c0f4325c2784aab900",
+      "published_sha256": "28fc47a16038707c4a825d816d9aa0f547fb244543c758c0f4325c2784aab900",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-lobe-prompts/references/prompt-spec.md": {
+      "source_sha256": "41f951d14996f412e3f68cfeef9f385285024319fe9621462ae64a44a294458b",
+      "published_sha256": "41f951d14996f412e3f68cfeef9f385285024319fe9621462ae64a44a294458b",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-lobe-prompts/references/contact-sheets.md": {
+      "source_sha256": "6a17cc7b4b0bd7c4f35fc4683c4c8fbbde27e2fb30d3812503a91bfb417cf187",
+      "published_sha256": "6a17cc7b4b0bd7c4f35fc4683c4c8fbbde27e2fb30d3812503a91bfb417cf187",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-lobe-prompts/references/prompt-continuity.md": {
+      "source_sha256": "ad3a856264daf3f5011efe7c5e6f9a75912f00c30810d38901c90929ff565a4b",
+      "published_sha256": "ad3a856264daf3f5011efe7c5e6f9a75912f00c30810d38901c90929ff565a4b",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-lobe-prompts/references/transport-semantics.md": {
+      "source_sha256": "436b93d4678b9beea2c397afa0e7cd86375c22f77a7b4176f970cb028a112d4a",
+      "published_sha256": "436b93d4678b9beea2c397afa0e7cd86375c22f77a7b4176f970cb028a112d4a",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-lobe-prompts/agents/openai.yaml": {
+      "source_sha256": "b8c7599d73e1cd5956b96fed12d7eb97e846ca7cca8c3f8f70eb59332c7957a1",
+      "published_sha256": "b8c7599d73e1cd5956b96fed12d7eb97e846ca7cca8c3f8f70eb59332c7957a1",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-review/SKILL.md": {
+      "source_sha256": "2d725546173253367fd74f8e7e2e902afde030db3877f48dc38c9b22b21d3ce2",
+      "published_sha256": "2d725546173253367fd74f8e7e2e902afde030db3877f48dc38c9b22b21d3ce2",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-review/references/comparison.md": {
+      "source_sha256": "e35f1de82e018778abf4c3c6d3aeddd39e246d9c26e4ccd2ac64f8012afca34b",
+      "published_sha256": "e35f1de82e018778abf4c3c6d3aeddd39e246d9c26e4ccd2ac64f8012afca34b",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-review/agents/openai.yaml": {
+      "source_sha256": "ec523969eaf8774135632eaeb45be3aa5c1ca3785271ccbc01d62fcf8df792c6",
+      "published_sha256": "ec523969eaf8774135632eaeb45be3aa5c1ca3785271ccbc01d62fcf8df792c6",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-spatial-design/SKILL.md": {
+      "source_sha256": "2fd85c7a7aa18d5cf27f506f106273ecf5ff92dd6d1f67e964729b190171d655",
+      "published_sha256": "2fd85c7a7aa18d5cf27f506f106273ecf5ff92dd6d1f67e964729b190171d655",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-spatial-design/agents/openai.yaml": {
+      "source_sha256": "13bdecb50a72bb1f2a743388be2805bf3345a62cdd696b5b8f7260a719ad9053",
+      "published_sha256": "13bdecb50a72bb1f2a743388be2805bf3345a62cdd696b5b8f7260a719ad9053",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-spatial-design/references/coordinate-transfer.md": {
+      "source_sha256": "22690cb9e4d484c23d5fc927aa4cb7982a73138b53d1b0e9db30bb7f1e74f2ec",
+      "published_sha256": "22690cb9e4d484c23d5fc927aa4cb7982a73138b53d1b0e9db30bb7f1e74f2ec",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-spatial-design/references/coherent-deformation.md": {
+      "source_sha256": "215c21ad3637656f2fcbc006781d9fa6d9822eb6c891ceff7b335f960eea7b13",
+      "published_sha256": "215c21ad3637656f2fcbc006781d9fa6d9822eb6c891ceff7b335f960eea7b13",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-spatial-design/references/mapping-blends.md": {
+      "source_sha256": "2db5c544410cff91b391ea2a5f549c3e9becf4eb8625f8753df1e9af39434f65",
+      "published_sha256": "2db5c544410cff91b391ea2a5f549c3e9becf4eb8625f8753df1e9af39434f65",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-texture-maps/SKILL.md": {
+      "source_sha256": "0374be8094892260f62022b4d632044410cc90900b028ca1b1da04ee362b8ce1",
+      "published_sha256": "0374be8094892260f62022b4d632044410cc90900b028ca1b1da04ee362b8ce1",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-texture-maps/references/map-contracts.md": {
+      "source_sha256": "b1ab31acb3998e11740f80ac667d1b3d3524262c490c91007bec13a3d977f531",
+      "published_sha256": "b1ab31acb3998e11740f80ac667d1b3d3524262c490c91007bec13a3d977f531",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-texture-maps/references/map-quality.md": {
+      "source_sha256": "d213e71d3250be4bd6f4dc0b553a782776273884a25c6f746225127447acaa33",
+      "published_sha256": "d213e71d3250be4bd6f4dc0b553a782776273884a25c6f746225127447acaa33",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-texture-maps/references/detail-reconstruction.md": {
+      "source_sha256": "720c7cf403a212df7d434ec3b623852fcb4410a86a2255b4f0ffb3440d25d268",
+      "published_sha256": "720c7cf403a212df7d434ec3b623852fcb4410a86a2255b4f0ffb3440d25d268",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-texture-maps/references/finish-fields.md": {
+      "source_sha256": "53c7515203c8961c52b8127162ce7fcf5b48253306b65179f1e451a5914fc83e",
+      "published_sha256": "53c7515203c8961c52b8127162ce7fcf5b48253306b65179f1e451a5914fc83e",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-texture-maps/references/relief-composition.md": {
+      "source_sha256": "3a0f5a263f2706d8da5098ec23f15c13798a5272ad8b155248cfed1cc7d92343",
+      "published_sha256": "3a0f5a263f2706d8da5098ec23f15c13798a5272ad8b155248cfed1cc7d92343",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/image-material-texture-maps/agents/openai.yaml": {
+      "source_sha256": "38cdc1c90d103c7cf2aaae394a67342030d06572af0fed930307f2b2390665f2",
+      "published_sha256": "38cdc1c90d103c7cf2aaae394a67342030d06572af0fed930307f2b2390665f2",
+      "source_kind": "research-authored working snapshot, bundle 0.15.0",
+      "transformation": "Unchanged"
+    },
+    "skills/digital-twin-iteration/SKILL.md": {
+      "source_kind": "existing personal workflow",
+      "source_revision": "cb649cc44264bdaa98343d01ab861119d459a1ad",
+      "source_sha256": "9a77b081d31872a35d2951fa9b4865b573cdd6ff6db5dd430d7b2bc119a3df84",
+      "published_sha256": "5029660ec43cb03ef4879642dd6a198762b107a24476bea806d68f099f0b0aa8",
+      "transformation": "Add focused optional route to detailed material bundle / combined entry; existing workflow retained"
+    },
+    "skills/material-reference-lookdev/SKILL.md": {
+      "source_kind": "existing personal workflow",
+      "source_revision": "cb649cc44264bdaa98343d01ab861119d459a1ad",
+      "source_sha256": "8677694fd4922cbe3264b56b523138e819db02d1098fbef1fd3557b9b86818c1",
+      "published_sha256": "0c274ff8a5e4a2ea809eba1a33c456e46ca3f49a8fe924cacba051ed8332b17b",
+      "transformation": "Add focused optional route to detailed material bundle / combined entry; existing workflow retained"
+    },
+    "skills/product-image-to-turntable/SKILL.md": {
+      "source_kind": "new research-authored coordinator 0.1.0",
+      "source_sha256": "2aa1ba83a022bb94c0869bd92c5f1bbaa8a8f5a15d26c0093a7a64994dd5957b",
+      "published_sha256": "2aa1ba83a022bb94c0869bd92c5f1bbaa8a8f5a15d26c0093a7a64994dd5957b",
+      "transformation": "New generic coordinator and geometry/material interface reference"
+    },
+    "skills/product-image-to-turntable/agents/openai.yaml": {
+      "source_kind": "new research-authored coordinator 0.1.0",
+      "source_sha256": "b071504a9aeacd5e3c9a536dc43abc713a63a2afd6ab4fae80568dbf38b45cd6",
+      "published_sha256": "b071504a9aeacd5e3c9a536dc43abc713a63a2afd6ab4fae80568dbf38b45cd6",
+      "transformation": "New generic coordinator and geometry/material interface reference"
+    },
+    "skills/product-image-to-turntable/references/geometry-material-handoff.md": {
+      "source_kind": "new research-authored coordinator 0.1.0",
+      "source_sha256": "0ae48ef597ff34608339fe404d94fbea7e4004e68622bb0dd857bf780c078e27",
+      "published_sha256": "0ae48ef597ff34608339fe404d94fbea7e4004e68622bb0dd857bf780c078e27",
+      "transformation": "New generic coordinator and geometry/material interface reference"
+    }
+  }
+}

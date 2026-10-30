@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Material · 4 · Texture Maps"
+  short_description: "Derive and inspect coordinated material maps"
+  default_prompt: "Use $image-material-texture-maps. Derive coordinated texture maps from this reference and the accepted material hypotheses."

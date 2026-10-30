@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Material · 6 · Assemble"
+  short_description: "Wire, render, and diagnose an OpenPBR material"
+  default_prompt: "Use $image-material-assemble. Interpret these map contracts, assemble the material, and validate it with renders."

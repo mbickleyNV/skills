@@ -5,6 +5,13 @@ description: Route mixed product or architectural requests from product referenc
 
 # Digital twin iteration
 
+
+For a product-image → editable CAD → detailed image-derived materials → native
+turntable request, start with [product-image-to-turntable](../product-image-to-turntable/SKILL.md).
+It coordinates the LuaCAD fidelity workflow and ten-skill material bundle with
+shared geometry/finish scale, normal/coat ownership and separate fidelity gates.
+Focused CAD, finish and preview requests retain the routes below.
+
 ## Project adaptation
 
 This is a generalized workflow. Use the active project's source, scene, renderer

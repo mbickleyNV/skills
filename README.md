@@ -4,6 +4,7 @@
 # NVIDIA Agent Skills
 
 This personal fork also includes [personal LuaCAD and product workflows](docs/personal-blender-luacad-skills.md), separate from the verified NVIDIA catalog below.
+It also includes [personal image-derived material skills and the combined product-image workflow](docs/personal-image-material-skills.md). These personal contributions are experimental and unsigned; no NVIDIA verification is claimed.
 
 **Official, NVIDIA-verified Agent Skills for Claude Code, Codex, and other coding agents.**
 

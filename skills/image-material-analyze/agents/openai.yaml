@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Material · 1 · Analyze"
+  short_description: "Reason from image evidence to material hypotheses"
+  default_prompt: "Use $image-material-analyze. Analyze this reference and carry its evidence through the requested image-to-material stages."
