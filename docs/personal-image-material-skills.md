@@ -8,6 +8,12 @@ code and generated case media are not distributed with these skills.
 
 ## Entry points
 
+- **Complex Blender → OVRTX / RTPT materials:**
+  [blender-ovrtx-materials](../skills/blender-ovrtx-materials/SKILL.md), including
+  metric triplanar mapping, hex synthesis, flakes and independent coatings.
+  Install this optional adapter beside the material bundle when using Blender.
+  See [capabilities and publication evidence](engineering-changes/blender-ovrtx-materials.md).
+
 - **Product image → CAD + materials + movie:**
   [product-image-to-turntable](../skills/product-image-to-turntable/SKILL.md), version 0.1.0.
 - **Surface image → material:**

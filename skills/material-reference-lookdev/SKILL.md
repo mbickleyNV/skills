@@ -76,6 +76,11 @@ for a bad mating surface or bowed planar normals by changing roughness.
 
 ## Native compatibility and bounded iteration
 
+For complex editable Blender materials through the OVRTX add-on, use
+[blender-ovrtx-materials](../blender-ovrtx-materials/SKILL.md). It covers metric
+triplanar mapping, hex stochastic synthesis, independent interfaces and RTPT
+qualification. Retain this workflow's reference evidence and target application.
+
 For a new product finish from input photographs, or an explicitly requested
 image-generated PBR contact sheet, use
 [image-generated OpenPBR workflow](references/image-generated-openpbr.md).

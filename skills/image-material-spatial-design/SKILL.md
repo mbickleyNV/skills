@@ -35,6 +35,12 @@ Write the combination operation and its meaning. For fractional coverages of the
 
 Do not derive relief from color brightness merely to add complexity. If only color/coverage morphology is acceptable, use it there and keep relief unresolved or independently constructed. Tangent direction and layer-normal differences need their own native tests.
 
+For Blender-to-OVRTX execution, use the metric projection, shared field/seed and
+normal-frame recipes in
+[blender-ovrtx-materials](../blender-ovrtx-materials/SKILL.md). Distinguish
+stochastic hex synthesis from physical hexagonal tile layout, and retain this
+spatial plan's property ownership.
+
 ## Preserve scale through revisions
 
 An imagegen request to halve feature size is not proof that it happened. Inspect actual pixels, contour/profile and population before accepting. Changing UV scale changes both apparent size and density and can introduce repetition; record and review all three. Preserve partial interiors when removing a background pedestal, and route numerical conversions to [map contracts](../image-material-texture-maps/references/map-contracts.md).

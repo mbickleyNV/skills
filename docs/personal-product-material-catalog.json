@@ -1,12 +1,13 @@
 {
   "schema": "personal-product-material-catalog.v1",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "catalog_root": "../skills",
   "persona_entrypoints": {
     "product_image_to_movie": "product-image-to-turntable",
     "material_only": "image-material-analyze",
     "cad_only": "luacad-fidelity-modeling",
-    "accepted_blender_asset_to_movie": "product-turntable"
+    "accepted_blender_asset_to_movie": "product-turntable",
+    "blender_ovrtx_material": "blender-ovrtx-materials"
   },
   "skills": [
     {
@@ -143,6 +144,11 @@
       "name": "product-image-to-turntable",
       "path": "product-image-to-turntable/SKILL.md",
       "status": "ready"
+    },
+    {
+      "name": "blender-ovrtx-materials",
+      "path": "blender-ovrtx-materials/SKILL.md",
+      "status": "experimental"
     }
   ],
   "scope": "Personal experimental workflows; no NVIDIA verification or runtime certification. All ten material siblings are required for their bundle; product skills remain independently useful."

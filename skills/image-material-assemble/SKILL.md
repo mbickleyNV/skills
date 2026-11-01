@@ -11,6 +11,11 @@ For a planning-only request, use the available evidence and proposed channel con
 
 For a narrow revision of an existing material, reuse accepted state and start with the [declared edit surface and readback](references/assembly.md#preserve-complex-graphs-during-focused-revisions). Revisit only invalidated decisions; a roughness edit does not require new coat maps, a full architecture redesign or a new study sheet.
 
+For Blender authoring through the OVRTX add-on, use
+[blender-ovrtx-materials](../blender-ovrtx-materials/SKILL.md) for editable layered
+graphs, hex/triplanar fields and RTPT-specific qualification. Retain this skill's
+channel contracts and reference-review scope.
+
 ## Resolve the target and graph
 
 Use [architecture](../image-material-architecture/SKILL.md) to inventory the installed MaterialX/OpenPBR definitions and choose representations; discover renderer capabilities using documented interfaces. Verify node/input names, types, defaults, units, supported texture operations, and output/binding conventions against that installation. Read [assembly and diagnostic guidance](references/assembly.md) for the questions to resolve and public reference sources. Do not assume the newest web specification matches the runtime.
