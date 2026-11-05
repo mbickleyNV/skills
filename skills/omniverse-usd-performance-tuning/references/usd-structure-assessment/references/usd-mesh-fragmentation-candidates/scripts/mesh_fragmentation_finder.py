@@ -72,6 +72,7 @@ TOP_N = 25
 # would dissolve the reference-designator identity a service/BOM twin relies on.
 _ANON_RE = re.compile(
     r"^(mesh|xform|node|prim|group|shape|object|obj|geom|part)[_-]?\d*$"
+    r"|^fragment[_-]?(?:[a-z]|[0-9]+)$"
     r"|^\d+$"
     r"|^[0-9a-fA-F]{12,}$",
     re.IGNORECASE,
@@ -141,13 +142,16 @@ def _identity_signal(s: dict) -> str:
 
 
 def suggest_merges(parent_summaries, *, small_mesh_paths=None, instanced_paths=None,
-                   knobs=None) -> dict:
+                   knobs=None, root="/") -> dict:
     """Pure function: parent summaries -> {suggestions, routed_small_geometry,
     diagnostics}. No stage access, no geometry — unit-testable without Kit.
 
     ``parent_summaries`` — one dict per candidate parent with cheap reads:
         path, parent_kind, parent_name/parent_named, child_count,
         child_mesh_count, anonymous_child_fraction, distinct_materials.
+    ``root`` — the scan root the summaries came from, reported for the audit.
+        ``scan_stage`` walks the composed stage from the pseudo-root, so this
+        is ``"/"`` on the shipped path.
     ``small_mesh_paths`` — ancestor-or-exact paths flagged ``perf_small_mesh`` by
         the validator (the tininess signal / entry point).
     ``instanced_paths`` — paths the instance-candidate finder already claims as
@@ -223,8 +227,14 @@ def suggest_merges(parent_summaries, *, small_mesh_paths=None, instanced_paths=N
             ),
         },
         "diagnostics": {
+            "root": root,
             "parents_examined": len(parent_summaries),
             "fans_surfaced": len(suggestions),
+            # The tininess entry signal: how many perf_small_mesh paths the
+            # validator handed in. 0 means the suggester ran on structure
+            # alone, which the report has to say — the routing between merge
+            # and removeSmallGeometry depends on this input existing.
+            "perf_small_mesh_inputs": len(small),
         },
     }
 
@@ -280,44 +290,3 @@ def scan_stage(stage, knobs=None) -> list:
             "distinct_materials": len([m for m in mats if m not in ("<none>", "<unreadable>")]) or len(mats),
         })
     return summaries
-
-
-def render_report(result: dict) -> str:
-    L = ["Mesh-fragmentation suggester — %d parent(s) examined, %d fan(s) surfaced."
-         % (result["diagnostics"]["parents_examined"], result["diagnostics"]["fans_surfaced"])]
-    for s in result["suggestions"]:
-        L.append("  - %s  [fan=%d, materials=%d, ratio=%.1f%s%s]"
-                 % (s["merge_boundary"], s["fan_size"], s["distinct_materials"],
-                    s["mesh_material_ratio"],
-                    ", from perf_small_mesh" if s["from_perf_small_mesh"] else "",
-                    ", composes-with-instance" if s["composes_with_instance_candidate"] else ""))
-        L.append("      %s" % s["suggestion"])
-    rsg = result["routed_small_geometry"]
-    if rsg["remove_small_geometry_candidates"]:
-        L.append("  removeSmallGeometry (delete) candidates: %d"
-                 % len(rsg["remove_small_geometry_candidates"]))
-    return "\n".join(L)
-
-
-def _main(argv) -> int:
-    emit = "--emit-suggestions" in argv
-    args = [a for a in argv[1:] if not a.startswith("--")]
-    small_paths = []
-    if "--small-mesh-paths" in argv:
-        i = argv.index("--small-mesh-paths")
-        if i + 1 < len(argv):
-            small_paths = json.loads(open(argv[i + 1]).read())
-            args = [a for a in args if a != argv[i + 1]]
-    stage_path = args[0] if args else os.environ.get("DTP_STAGE")
-    if not stage_path:
-        sys.stderr.write("usage: mesh_fragmentation_finder.py <stage.usd> [--emit-suggestions]\n")
-        return 2
-    from pxr import Usd
-    stage = Usd.Stage.Open(stage_path)
-    result = suggest_merges(scan_stage(stage), small_mesh_paths=small_paths)
-    print(json.dumps(result, indent=2) if emit else render_report(result))
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(_main(sys.argv))

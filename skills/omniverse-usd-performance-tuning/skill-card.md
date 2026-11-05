@@ -1,5 +1,5 @@
 ## Description: <br>
-Top-level workflow skill for USD performance diagnosis and optimization. Handles slow loading, high memory, low FPS, and broad scene-optimization requests; delegates auth/runtime setup to Phase 0 owners. <br>
+Diagnose and optimize USD stages for slow loading, high memory, low FPS or validation; preserve asset boundaries and reuse shared definitions. <br>
 
 This skill is ready for commercial/non-commercial use. <br>
 
@@ -7,16 +7,16 @@ This skill is ready for commercial/non-commercial use. <br>
 NVIDIA <br>
 
 ### License/Terms of Use: <br>
-Apache-2.0 <br>
+Apache 2.0 <br>
 ## Use Case: <br>
-Developers and engineers working with USD scenes who need to diagnose and resolve performance problems such as slow loading, high memory usage, low FPS, GPU device-lost events, and validation failures. <br>
+Developers and technical artists working with OpenUSD and NVIDIA Omniverse use this skill to diagnose and optimize USD stages (for example, factory layouts) for faster loading, lower memory use or better rendering, while preserving required prim paths, appearance, placement, animation and interfaces and writing results to a separate output workspace. <br>
 
 ### Deployment Geography for Use: <br>
 Global <br>
 
 ## Requirements / Dependencies: <br>
-**Requires API Key or External Credential:** [Yes] <br>
-**Credential Type(s):** [OAuth Token] <br>
+**Requires API Key or External Credential:** [Optional] <br>
+**Credential Type(s):** [OAuth Token, Service Account] <br>
 
 Do not include secrets in prompts/logs/output; use least-privilege credentials; rotate keys as appropriate. <br>
 
@@ -25,61 +25,65 @@ Risk: Review before execution as proposals could introduce incorrect or misleadi
 Mitigation: Review and scan skill before deployment. <br>
 
 ## Reference(s): <br>
-- [Workflow Reference](references/workflow.md) <br>
-- [Skill Map](references/skill-map.md) <br>
-- [Operations Registry](references/operations/README.md) <br>
-- [USD Structure Assessment](references/usd-structure-assessment/README.md) <br>
-- [Optimization Report](references/optimization-report/README.md) <br>
-- [USD Validation Runner](references/usd-validation-runner/README.md) <br>
-- [Usd Optimize Run Operations](references/usd-optimize-run-operations/README.md) <br>
-- [Setup USD Performance Tuning](references/setup-usd-performance-tuning/README.md) <br>
+- [NVIDIA Factory-Level USD Structuring guide](https://docs.omniverse.nvidia.com/vfi/latest/guide/factory-level-structuring.html) <br>
+- [NVIDIA CAD conversion guidance](https://docs.omniverse.nvidia.com/vfi/latest/guide/cad-conversion.html) <br>
+- [Setup](references/setup.md) <br>
+- [Structure and boundary guidance](references/structure.md) <br>
+- [Asset authoring](references/asset-authoring.md) <br>
+- [Operations](references/operations.md) <br>
+- [Verification](references/verification.md) <br>
+- [Library reuse](references/library-reuse.md) <br>
+- [Standalone installation](references/install-standalone.md) <br>
+- [Remote assets](references/remote-assets.md) <br>
+- [Upstream USD Optimize guidance](references/upstreams/usd-optimize.md) <br>
 
 
 ## Skill Output: <br>
-**Output Type(s):** [Files, Analysis, Shell commands] <br>
-**Output Format:** [Optimized USD stage, JSON report, Markdown summary, rendered HTML report] <br>
+**Output Type(s):** [Analysis, Files, Shell commands] <br>
+**Output Format:** [Optimized USD assembly plus validated report JSON and generated Markdown and HTML reports, with a Markdown summary] <br>
 **Output Parameters:** [1D] <br>
-**Other Properties Related to Output:** [Structured JSON conforms to optimization-report schema; HTML rendered via template] <br>
+**Other Properties Related to Output:** [Writes only to a separate output workspace; source layers are not overwritten without explicit authorization. Live progress is exposed through a read-only browser dashboard.] <br>
 
 ## Evaluation Agents Used: <br>
-- Claude Code (`aws/anthropic/bedrock-claude-opus-4-8`) <br>
-- Codex (`openai/openai/gpt-5.5`) <br>
+- Claude Code (`aws/anthropic/bedrock-claude-opus-5-5`) <br>
+- Codex (`openai/openai/gpt-6.1-sol`) <br>
 
 
 
 ## Evaluation Tasks: <br>
-9 evaluation tasks (8 positive, 1 negative), each running in an isolated sandbox pod. <br>
+10 evaluation tasks (9 positive, 1 negative), one attempt per task, each run in an isolated sandbox pod; each task was also attempted without the skill as a baseline. <br>
 
 ## Evaluation Metrics Used: <br>
 Reported benchmark dimensions: <br>
-- Security: Whether the skill avoids unsafe operations, secret leakage, and unauthorized access. <br>
-- Correctness: Whether the final answer is correct against the reference answer. <br>
-- Discoverability: Whether the right skill was found and executed when needed. <br>
-- Effectiveness: Whether the skill helped complete the user's goal and followed expected workflow behavior. <br>
-- Efficiency: Whether the skill avoided wasted tool or skill usage. <br>
+- Security: Is it safe to use? Scored from the `security` signal (100%). <br>
+- Correctness: Is the answer correct? Scored from the `accuracy` signal (100%). <br>
+- Discoverability: Was the right skill loaded when needed? Scored from the `skill_execution` signal (100%). <br>
+- Effectiveness: Did the skill help complete the task? Equal-weight mean of `goal_accuracy` and `behavior_check`. <br>
+- Efficiency: Did it avoid wasted tool calls and token usage? 50% `skill_efficiency` plus 50% `token_efficiency`. <br>
 
 Underlying evaluation signals used in this run: <br>
-- `security`: Checks for unsafe operations, secret leakage, and unauthorized access. <br>
-- `skill_execution`: Whether the expected skill was found and executed. <br>
-- `skill_efficiency`: Routing quality, workspace-aware skill reads, and productive tool use. <br>
+- `security`: Unsafe operations, secret leakage, and unauthorized access. <br>
+- `skill_execution`: Whether the expected skill was selected, decoys were avoided, and the workflow executed. <br>
+- `skill_efficiency`: Tool-call productivity. <br>
 - `accuracy`: Final-answer correctness against the reference answer. <br>
 - `goal_accuracy`: Whether the user's goal was achieved. <br>
 - `behavior_check`: Whether the expected workflow behavior was followed. <br>
+- `token_efficiency`: Actual uncached prompt plus completion token usage. <br>
 
 
 
 ## Evaluation Results: <br>
-| Measure | Codex (Baseline → Skill Uplift) |
-|---|---:|
-| Overall | 46% → 84% (+38 points) |
-| Security | 89% → 100% (+11 points) |
-| Correctness | 20% → 76% (+56 points) |
-| Discoverability | 47% → 91% (+44 points) |
-| Effectiveness | 37% → 63% (+26 points) |
-| Efficiency | 35% → 91% (+56 points) |
+| Measure | Claude Code (Baseline → Skill Uplift) | Codex (Baseline → Skill Uplift) |
+|---|---:|---:|
+| Overall | 79.4% — baseline ran, but no comparable score was available; uplift unavailable | 78.9% — baseline ran, but no comparable score was available; uplift unavailable |
+| Security | 100.0% → 90.0% (-10.0 points) | 90.0% → 100.0% (+10.0 points) |
+| Correctness | 60.0% → 86.0% (+26.0 points) | 60.0% → 82.0% (+22.0 points) |
+| Discoverability | 82.8% — baseline ran, but no comparable score was available; uplift unavailable | 76.1% — baseline ran, but no comparable score was available; uplift unavailable |
+| Effectiveness | 36.6% → 60.4% (+23.8 points) | 36.6% → 57.2% (+20.6 points) |
+| Efficiency | 77.6% — baseline ran, but no comparable score was available; uplift unavailable | 79.4% — baseline ran, but no comparable score was available; uplift unavailable |
 
 ## Skill Version(s): <br>
-0.1.0 (source: frontmatter) <br>
+0.5.0 (source: frontmatter, CHANGELOG) <br>
 
 ## Ethical Considerations: <br>
 NVIDIA believes Trustworthy AI is a shared responsibility and we have established policies and practices to enable development for a wide array of AI applications. When downloaded or used in accordance with our terms of service, developers should work with their internal team to ensure this skill meets requirements for the relevant industry and use case and addresses unforeseen product misuse. <br>

@@ -11,7 +11,7 @@ permissions:
 jobs:
   require-nvskills-ci:
     runs-on: ubuntu-latest
-    timeout-minutes: 65
+    timeout-minutes: 245
     permissions:
       contents: read
       pull-requests: read
@@ -33,7 +33,7 @@ jobs:
           SIGNATURE_SERVICE_ACCOUNT_LOGIN: ${{ vars.NVSKILLS_FORK_SERVICE_ACCOUNT_LOGIN || vars.NVSKILLS_SIGNATURE_COMMIT_LOGIN || 'svc-nvskills-signing' }}
           STATUS_POLL_SECONDS: ${{ vars.NVSKILLS_STATUS_POLL_SECONDS || '30' }}
           MISSING_STATUS_GRACE_SECONDS: ${{ vars.NVSKILLS_MISSING_STATUS_GRACE_SECONDS || '120' }}
-          MAX_STATUS_WAIT_SECONDS: ${{ vars.NVSKILLS_MAX_STATUS_WAIT_SECONDS || '3600' }}
+          MAX_STATUS_WAIT_SECONDS: ${{ vars.NVSKILLS_MAX_STATUS_WAIT_SECONDS || '14400' }}
         run: |
           set -euo pipefail
 
@@ -53,15 +53,24 @@ jobs:
             esac
           }
 
-          case "${HEAD_REF}" in
-            automated/sync-skills|bot/regenerate-skill-metadata)
-              append_summary \
-                "## NVSkills CI required status" \
-                "" \
-                "Skipped: bot-managed branch \`${HEAD_REF}\` is exempt from this check."
-              exit 0
-              ;;
-          esac
+          bounded_positive_integer() {
+            local value
+            local maximum="$3"
+
+            value="$(positive_integer "$1" "$2")"
+            while [ "${value#0}" != "${value}" ]; do
+              value="${value#0}"
+            done
+            if [ -z "${value}" ] || [ "${value}" = "0" ]; then
+              value="$2"
+            fi
+            if [ "${#value}" -gt "${#maximum}" ] ||
+              { [ "${#value}" -eq "${#maximum}" ] && [[ "${value}" > "${maximum}" ]]; }; then
+              echo "::warning::Configured wait value ${value}s exceeds the safe maximum ${maximum}s; clamping it." >&2
+              value="${maximum}"
+            fi
+            printf '%s' "${value}"
+          }
 
           github_get() {
             curl --fail --silent --show-error --location \
@@ -78,33 +87,51 @@ jobs:
             local page=1
             local response
             local first_response=""
-            local page_files
-            local all_files='[]'
             local page_count
+            # Accumulate through files, never shell variables passed as argv.
+            # Linux caps a single argument at 128 KiB (MAX_ARG_STRLEN); the
+            # commit payload exceeds that long before the page-30 guard below
+            # can fire, so --argjson died with "Argument list too long" instead
+            # of returning a verdict. See NVIDIA/skills#471 (96 files, 865 KiB).
+            local scratch_dir all_files_file page_files_file
+            if ! scratch_dir="$(mktemp -d)" || [ -z "${scratch_dir}" ]; then
+              echo "Unable to create a scratch directory for commit ${commit_sha}." >&2
+              return 1
+            fi
+            all_files_file="${scratch_dir}/all.json"
+            page_files_file="${scratch_dir}/page.json"
+            printf '[]' > "${all_files_file}"
 
             while true; do
               response="$(github_get "https://api.github.com/repos/${owner}/${repo}/commits/${commit_sha}?per_page=100&page=${page}")"
               if [ "${page}" -eq 1 ]; then
                 first_response="${response}"
               fi
-              page_files="$(printf '%s' "${response}" | jq -c '.files // []')"
-              page_count="$(printf '%s' "${page_files}" | jq 'length')"
-              all_files="$(jq -cn \
-                --argjson existing "${all_files}" \
-                --argjson current "${page_files}" \
-                '$existing + $current')"
+              # Discard unused patches; keep both paths to detect renames
+              # into generated artifacts and out of watched directories.
+              printf '%s' "${response}" \
+                | jq -c '[.files[]? | {filename, previous_filename}]' > "${page_files_file}"
+              page_count="$(jq 'length' < "${page_files_file}")"
+              jq -cn \
+                --slurpfile existing "${all_files_file}" \
+                --slurpfile current "${page_files_file}" \
+                '$existing[0] + $current[0]' > "${all_files_file}.new"
+              mv "${all_files_file}.new" "${all_files_file}"
 
               if [ "${page_count}" -lt 100 ]; then
                 break
               fi
               if [ "${page}" -ge 30 ]; then
                 echo "Commit ${commit_sha} has too many files to classify safely." >&2
+                rm -rf "${scratch_dir}"
                 return 1
               fi
               page=$((page + 1))
             done
 
-            printf '%s' "${first_response}" | jq -c --argjson files "${all_files}" '.files = $files'
+            printf '%s' "${first_response}" \
+              | jq -c --slurpfile files "${all_files_file}" '.files = $files[0]'
+            rm -rf "${scratch_dir}"
           }
 
           first_watched_path() {
@@ -184,6 +211,18 @@ jobs:
               "" \
               "Skipped: this workflow run is for stale head \`${head_sha}\`; PR #${pr_number} is now at \`${current_head_sha}\`."
             exit 0
+          fi
+
+          if [ "${head_repo_full_name}" = "${REPO,,}" ]; then
+            case "${HEAD_REF}" in
+              automated/sync-skills|bot/regenerate-skill-metadata)
+                append_summary \
+                  "## NVSkills CI required status" \
+                  "" \
+                  "Skipped: upstream bot-managed branch \`${HEAD_REF}\` is exempt from this check."
+                exit 0
+                ;;
+            esac
           fi
 
           has_watched_change=false
@@ -274,9 +313,14 @@ jobs:
             exit 0
           fi
 
-          poll_seconds="$(positive_integer "${STATUS_POLL_SECONDS}" 30)"
-          missing_grace_seconds="$(positive_integer "${MISSING_STATUS_GRACE_SECONDS}" 120)"
-          max_wait_seconds="$(positive_integer "${MAX_STATUS_WAIT_SECONDS}" 3600)"
+          status_floor_sha="${latest_watched_sha}"
+          if [ -n "${latest_generated_signature_sha}" ]; then
+            status_floor_sha="${latest_generated_signature_sha}"
+          fi
+
+          poll_seconds="$(bounded_positive_integer "${STATUS_POLL_SECONDS}" 30 300)"
+          missing_grace_seconds="$(bounded_positive_integer "${MISSING_STATUS_GRACE_SECONDS}" 120 600)"
+          max_wait_seconds="$(bounded_positive_integer "${MAX_STATUS_WAIT_SECONDS}" 14400 14400)"
           elapsed_seconds=0
           status_sha=""
           status_state="missing"
@@ -300,7 +344,7 @@ jobs:
                   '[.[] | select(.context == $context)][0].target_url // ""')"
                 break
               fi
-              if [ "${commit_sha}" = "${latest_watched_sha}" ]; then
+              if [ "${commit_sha}" = "${status_floor_sha}" ]; then
                 break
               fi
             done
@@ -326,7 +370,7 @@ jobs:
                 ;;
             esac
 
-            echo "Waiting for ${STATUS_CONTEXT} at or after ${latest_watched_sha} (state: ${status_state}, elapsed: ${elapsed_seconds}s)."
+            echo "Waiting for ${STATUS_CONTEXT} at or after ${status_floor_sha} (state: ${status_state}, elapsed: ${elapsed_seconds}s)."
             sleep "${poll_seconds}"
             elapsed_seconds=$((elapsed_seconds + poll_seconds))
           done
@@ -341,7 +385,7 @@ jobs:
             if [ -n "${latest_generated_signature_sha}" ]; then
               append_summary \
                 "" \
-                "Trusted generated signature commit \`${latest_generated_signature_sha}\` was excluded from content status requirements."
+                "Latest generated signature commit: \`${latest_generated_signature_sha}\`."
             fi
             if [ "${status_sha}" != "${head_sha}" ]; then
               append_summary \
@@ -354,7 +398,7 @@ jobs:
           append_summary \
             "## NVSkills CI required status" \
             "" \
-            "Failed: no successful \`${STATUS_CONTEXT}\` status was found at or after latest watched commit \`${latest_watched_sha}\` (state: \`${status_state}\`)." \
+            "Failed: no successful \`${STATUS_CONTEXT}\` status was found at or after required evidence commit \`${status_floor_sha}\` (state: \`${status_state}\`)." \
             "" \
             "Latest watched-path change: \`${latest_watched_path}\`." \
             "" \
@@ -363,7 +407,7 @@ jobs:
           if [ "${is_fork_pull_request}" = "true" ]; then
             append_summary \
               "" \
-              "\`/nvskills-ci\` only works on branches in the parent repo, not forks."
+              "For a fork pull request, add \`${SIGNATURE_SERVICE_ACCOUNT_LOGIN}\`, the configured NVSkills signing service account, as a collaborator with write access to the fork repository, then ask a maintainer of the base repository to comment \`/nvskills-ci\`."
           fi
           if [ -n "${status_sha}" ]; then
             append_summary "" "Latest NVSkills CI status checked: \`${status_state}\` on \`${status_sha}\`."

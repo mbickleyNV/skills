@@ -69,8 +69,8 @@ jobs:
 
             echo "── $name ──"
 
-            # Clone with sparse checkout
-            tmp_dir=".tmp/$(echo "$repo" | tr '/' '-')"
+            # Keep separate checkouts for components that share a source repo.
+            tmp_dir=".tmp/${i}-$(echo "$repo" | tr '/' '-')"
             if ! git clone --depth 1 --filter=blob:none --sparse \
                    "https://github.com/${repo}.git" \
                    "$tmp_dir" -b "$ref" 2>/dev/null; then
@@ -330,7 +330,7 @@ jobs:
           # Every catalog skill (defined by SKILL.md) must ship with:
           #   - skill.oms.sig  (detached NVIDIA signature)
           #   - skill-card.md  (skill metadata card)
-          #   - eval data      (Tier-3 NV-ACES dataset). Accepted in any
+          #   - eval data      (Tier-3 evaluation dataset). Accepted in any
           #                     of these forms — semantic equivalence,
           #                     not literal-filename:
           #                       * evals.json anywhere in the skill dir

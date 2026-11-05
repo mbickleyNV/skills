@@ -2,6 +2,7 @@
 # Copyright (c) 2026 NVIDIA Corporation. All rights reserved.
 
 name: Isaac for Healthcare Workflows
+product_primary: Isaac for Healthcare
 repo: isaac-for-healthcare/i4h-workflows
 description: Agent-ready skills for Isaac for Healthcare agentic and catheter-navigation workflows, covering task authoring, data pipelines, policy training and validation, CT-derived digital twins, DRR rendering, and interactive catheter simulation.
 links:
@@ -27,23 +28,11 @@ skills:
     catalog_dir: i4h-workflow-dataset-convert
   - path: skills/i4h-workflow-finetune/
     catalog_dir: i4h-workflow-finetune
+  - path: skills/i4h-workflow-train-rl/
+    catalog_dir: i4h-workflow-train-rl
   - path: skills/i4h-workflow-validate/
     catalog_dir: i4h-workflow-validate
   - path: skills/i4h-workflow-e2e/
     catalog_dir: i4h-workflow-e2e
   - path: skills/i4h-lerobot-viz/
     catalog_dir: i4h-lerobot-viz
-  - path: skills/i4h-catheter-navigation/
-    catalog_dir: i4h-catheter-navigation
-  - path: skills/i4h-catheter-navigation-setup/
-    catalog_dir: i4h-catheter-navigation-setup
-  - path: skills/i4h-catheter-navigation-digital-twin/
-    catalog_dir: i4h-catheter-navigation-digital-twin
-  - path: skills/i4h-catheter-navigation-render-drr/
-    catalog_dir: i4h-catheter-navigation-render-drr
-  - path: skills/i4h-catheter-navigation-viewport/
-    catalog_dir: i4h-catheter-navigation-viewport
-  - path: skills/i4h-catheter-navigation-smoke/
-    catalog_dir: i4h-catheter-navigation-smoke
-  - path: skills/i4h-catheter-navigation-e2e/
-    catalog_dir: i4h-catheter-navigation-e2e
